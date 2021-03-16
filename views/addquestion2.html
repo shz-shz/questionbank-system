@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>批量添加题目</title>
+    <link rel="stylesheet" href="/public/css/addquestion2.css">
+</head>
+
+<body>
+    <div class="top">批量添加题目</div>
+    <form action="/upload" enctype="multipart/form-data" method="POST">
+        <label for="topic" class="label">试题类型</label>
+        <p><input type="text" name="uploader" class="input_text" placeholder="请输入上传者"></p>
+        <label for="tag" class="label">试题类型</label>
+        <select name="tag" id="tag">
+            <option value="0"></option>
+            <option value="1">HTML</option>
+            <option value="2">CSS</option>
+            <option value="3">JavaScript</option>
+        </select>
+        <label for="file_upload" class="label">上传文件</label>
+        <input type="file" name="myfile" id="file_upload" class="file_upload">
+        <input type="submit" value="提交" class="submit">
+    </form>
+</body>
+
+</html>
