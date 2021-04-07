@@ -7,6 +7,31 @@ a {
     text-decoration: none;
 }
 
+.header {
+    margin: 0 auto;
+    height:70px;
+    width: 100%;
+    background-color: black;
+    line-height: 70px;
+}
+
+.nav {
+    margin: auto;
+    height: 70px;
+    width: 80%;
+    /* background-color: white; */
+    line-height: 70px;
+}
+
+.logo {
+    display: block;
+    float:left;
+    height: 70px;
+    line-height: 70px;
+    color: white;
+    font-size: 30px;
+}
+
 ul li {
     list-style: none;
 }
@@ -78,6 +103,12 @@ ul li {
 
 .methods {
     height: 30px;
+}
+
+.uploader {
+    float: left;
+    font-size: 14px;
+    color: grey;
 }
 
 .methods a {

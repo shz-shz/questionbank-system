@@ -5,11 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>前端题库系统</title>
     <link rel="stylesheet" href="/public/css/index.css">
 </head>
 
 <body>
+    <div class="header">
+        <ul class="nav">
+            <li class="logo">前端题库系统</li>
+        </ul>
+    </div>
     <div class="top">
         <a href="/addquestion1" class="top-button">手动添加题目</a>
         <a href="/addquestion2" class="top-button">批量添加题目</a>
@@ -17,7 +22,9 @@
     <ul class="question-list">
         {{each questions}}
         <li class="question">
-            <div class="question-topic">{{if $value.tag==0}}<span></span>{{/if}} {{if $value.tag==1}}<span>[HTML]</span>{{/if}} {{if $value.tag==2}}<span>[CSS]</span>{{/if}} {{if $value.tag==3}}<span>[JavaScript]</span>{{/if}} {{$value.topic}}
+            <div class="question-topic">{{if $value.tag==0}}<span></span>{{/if}} {{if
+                $value.tag==1}}<span>[HTML]</span>{{/if}} {{if $value.tag==2}}<span>[CSS]</span>{{/if}} {{if
+                $value.tag==3}}<span>[JavaScript]</span>{{/if}} {{$value.question}}
             </div>
 
             <ul class="options">
@@ -31,8 +38,10 @@
                 <div class="analysis"><span>答案解析:</span>{{$value.analysis}}</div>
             </div>
             <div class="methods">
+                <div class="uploader">上传者:{{$value.uploader}}</div>
                 <a href="/delete?id={{$value.id}}">删除</a>
-                <a href="/edit?id={{$value.id}}&tag={{$value.tag}}&answer={{$value.answer}}&analysis={{$value.analysis}}">编辑</a>
+                <a
+                    href="/edit?id={{$value.id}}&tag={{$value.tag}}&answer={{$value.answer}}&analysis={{$value.analysis}}">编辑</a>
             </div>
         </li>
         {{/each}}

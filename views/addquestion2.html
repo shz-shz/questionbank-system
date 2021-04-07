@@ -12,16 +12,24 @@
 <body>
     <div class="top">批量添加题目</div>
     <form action="/upload" enctype="multipart/form-data" method="POST">
-        <label for="topic" class="label">试题类型</label>
+        <label for="topic" class="label">上传者</label>
         <p><input type="text" name="uploader" class="input_text" placeholder="请输入上传者"></p>
-        <label for="tag" class="label">试题类型</label>
+        <label for="tag" class="label">试题标签</label>
         <select name="tag" id="tag">
             <option value="0"></option>
             <option value="1">HTML</option>
             <option value="2">CSS</option>
             <option value="3">JavaScript</option>
         </select>
-        <label for="file_upload" class="label">上传文件</label>
+        <label for="" class="label">试题类型</label>
+        <div class="types">
+            <label for="danxuan">单选:</label>
+            <input type="radio" class="radio" id="danxuan" name="type" value="单选" checked="checked">
+            <label for="jianda">简答:</label>
+            <input type="radio" class="radio" id="jianda" name="type" value="简答">
+        </div>
+        <label for="file_upload" class="upload_label">上传文件(仅支持TXT格式的文件)</label><a class="format_link"
+            href="https://www.yuque.com/docs/share/63118ae1-4f31-430e-bd3f-9045413e7190?# 《题库提交格式》">提交格式</a>
         <input type="file" name="myfile" id="file_upload" class="file_upload">
         <input type="submit" value="提交" class="submit">
     </form>

@@ -22,6 +22,19 @@
     line-height: 30px;
 }
 
+.types {
+    width: 97%;
+    margin: 0 auto;
+}
+
+.types label {
+    margin-left: 5px;
+}
+
+.types input {
+    margin-left: 7px;
+}
+
 form {
     margin: 40px auto;
     width: 70%;
@@ -54,6 +67,9 @@ select {
 
 .answers label {
     margin-left: 5px;
+}
+.answers input {
+    margin-left: 7px;
 }
 
 .radio {

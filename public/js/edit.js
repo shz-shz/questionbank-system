@@ -13,7 +13,7 @@ else if (originanswer == 'D')
 var textarea = document.querySelector('textarea')
 var analysisedit = url.split('&')[3]
 analysisedit = analysisedit.split('=')[1]
-textarea.innerHTML = analysisedit
+textarea.innerHTML = decodeURI(analysisedit)
 
 var select = document.querySelector('select')
 var selected = url.split('&')[1]
