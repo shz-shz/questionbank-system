@@ -1,65 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>手动添加题目</title>
+		<link rel="stylesheet" href="/public/css/addquestion1.css" />
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>手动添加题目</title>
-    <link rel="stylesheet" href="/public/css/addquestion1.css">
-</head>
-
-<body>
-    <div class="top">手动添加题目</div>
-    <form action="/addquestion1" method="POST" id="question-upload">
-        <label for="uploader" class="label">上传者</label>
-        <input type="text" name="uploader" class="input_text" id="uploader" placeholder="请输入上传者">
-        <label for="topic" class="label">题目</label>
-        <input type="text" name="question" class="input_text" id="topic" placeholder="请输入题目">
-        <label for="tag" class="label">试题标签</label>
-        <select name="tag" id="tag">
-            <option value="0"></option>
-            <option value="1">HTML</option>
-            <option value="2">CSS</option>
-            <option value="3">JavaScript</option>
-        </select>
-        <label for="" class="label">试题类型</label>
-        <div class="types">
-            <label for="danxuan">单选:</label>
-            <input type="radio" class="radio" id="danxuan" name="type" value="单选" checked="checked">
-            <label for="jianda">简答:</label>
-            <input type="radio" class="radio" id="jianda" name="type" value="简答">
-        </div>
-        <!-- <div id="dan"> -->
-        <label for="" class="label">请输入选项</label>
-        <label for="optionA" class="label">A:</label>
-        <input type="text" name="optionA" class="input_text" id="optionA" placeholder="请输入A选项内容">
-        <label for="optionB" class="label">B:</label>
-        <input type="text" name="optionB" class="input_text" id="optionB" placeholder="请输入B选项内容">
-        <label for="optionC" class="label">C:</label>
-        <input type="text" name="optionC" class="input_text" id="optionC" placeholder="请输入C选项内容">
-        <label for="optionD" class="label">D:</label>
-        <input type="text" name="optionD" class="input_text" id="optionD" placeholder="请输入D选项内容">
-        <label for="" class="label">请输入正确答案</label>
-        <div class="answers">
-            <label for="A">A:</label>
-            <input type="radio" class="radio" id="A" name="answer" value="A">
-            <label for="B">B:</label>
-            <input type="radio" class="radio" id="B" name="answer" value="B">
-            <label for="C">C:</label>
-            <input type="radio" class="radio" id="C" name="answer" value="C">
-            <label for="D">D:</label>
-            <input type="radio" class="radio" id="D" name="answer" value="D">
-        </div>
-        <!-- </div> -->
-        <!-- <div id="jian">
+	<body>
+		<div class="top">手动添加题目</div>
+		<form action="/add-questions/manually" method="POST" id="question-upload">
+			<label for="uploader" class="label">上传者</label>
+			<input type="text" name="uploader" class="input_text" id="uploader" placeholder="请输入上传者" />
+			<label for="topic" class="label">题目</label>
+			<input type="text" name="question" class="input_text" id="topic" placeholder="请输入题目" />
+			<label for="tag" class="label">试题标签</label>
+			<select name="tag" id="tag">
+				<option value="0"></option>
+				<option value="1">HTML</option>
+				<option value="2">CSS</option>
+				<option value="3">JavaScript</option>
+			</select>
+			<label for="" class="label">试题类型</label>
+			<div class="types">
+				<label for="danxuan">单选:</label>
+				<input type="radio" class="radio" id="danxuan" name="type" value="单选" checked="checked" />
+				<label for="jianda">简答:</label>
+				<input type="radio" class="radio" id="jianda" name="type" value="简答" />
+			</div>
+			<!-- <div id="dan"> -->
+			<label for="" class="label">请输入选项</label>
+			<label for="optionA" class="label">A:</label>
+			<input type="text" name="optionA" class="input_text" id="optionA" placeholder="请输入A选项内容" />
+			<label for="optionB" class="label">B:</label>
+			<input type="text" name="optionB" class="input_text" id="optionB" placeholder="请输入B选项内容" />
+			<label for="optionC" class="label">C:</label>
+			<input type="text" name="optionC" class="input_text" id="optionC" placeholder="请输入C选项内容" />
+			<label for="optionD" class="label">D:</label>
+			<input type="text" name="optionD" class="input_text" id="optionD" placeholder="请输入D选项内容" />
+			<label for="" class="label">请输入正确答案</label>
+			<div class="answers">
+				<label for="A">A:</label>
+				<input type="radio" class="radio" id="A" name="answer" value="A" />
+				<label for="B">B:</label>
+				<input type="radio" class="radio" id="B" name="answer" value="B" />
+				<label for="C">C:</label>
+				<input type="radio" class="radio" id="C" name="answer" value="C" />
+				<label for="D">D:</label>
+				<input type="radio" class="radio" id="D" name="answer" value="D" />
+			</div>
+			<!-- </div> -->
+			<!-- <div id="jian">
             <label for="" class="label">请输入参考答案:</label>
         </div> -->
-        <label for="analysis" class="label">题目解析</label>
-        <textarea form="question-upload" name="analysis" class="text_area" id="analysis"
-            placeholder="请输入题目解析"></textarea>
-        <input type="submit" value="提交" class="submit">
-    </form>
-</body>
-
+			<label for="analysis" class="label">题目解析</label>
+			<textarea form="question-upload" name="analysis" class="text_area" id="analysis" placeholder="请输入题目解析"></textarea>
+			<input type="submit" value="提交" class="submit" />
+		</form>
+	</body>
 </html>
