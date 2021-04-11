@@ -1,73 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>前端题库系统</title>
-		<link rel="stylesheet" href="/public/css/index.css" />
-	</head>
 
-	<body>
-		<div class="header">
-			<ul class="nav">
-				<li class="logo">前端题库系统</li>
-			</ul>
-		</div>
-		<div class="top">
-			<a href="/render/addquestion1" class="top-button">手动添加题目</a>
-			<a href="/render/addquestion2" class="top-button">批量添加题目</a>
-		</div>
-		<ul class="question-list">
-			{{each questions}}
-			<li class="question">
-				<div class="question-topic">
-					{{if $value.tag==0}}
-					<span></span>
-					{{/if}} {{if $value.tag==1}}
-					<span>[HTML]</span>
-					{{/if}} {{if $value.tag==2}}
-					<span>[CSS]</span>
-					{{/if}} {{if $value.tag==3}}
-					<span>[JavaScript]</span>
-					{{/if}} {{$value.question}}
-				</div>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>前端题库系统</title>
+	<link rel="stylesheet" href="/public/css/index.css" />
+</head>
 
-				<ul class="options">
-					<li>
-						<span>A.</span>
-						{{$value.optionA}}
-					</li>
-					<li>
-						<span>B.</span>
-						{{$value.optionB}}
-					</li>
-					<li>
-						<span>C.</span>
-						{{$value.optionC}}
-					</li>
-					<li>
-						<span>D.</span>
-						{{$value.optionD}}
-					</li>
-				</ul>
-				<div class="question-answer">
-					<div class="answer">
-						<span>正确答案:</span>
-						{{$value.answer}}
-					</div>
-					<div class="analysis">
-						<span>答案解析:</span>
-						{{$value.analysis}}
-					</div>
-				</div>
-				<div class="methods">
-					<div class="uploader">上传者:{{$value.uploader}}</div>
-					<a href="/render/delete?id={{$value.id}}">删除</a>
-					<a href="/render/edit?id={{$value.id}}&tag={{$value.tag}}&answer={{$value.answer}}&analysis={{$value.analysis}}">编辑</a>
-				</div>
-			</li>
-			{{/each}}
+<body>
+	<div class="header">
+		<ul class="nav">
+			<li class="logo">前端题库系统</li>
 		</ul>
-	</body>
+	</div>
+	<div class="top">
+		<a href="/render/addquestion2" class="top-button">批量添加题目</a>
+		<a href="/render/addquestion1" class="top-button">手动添加题目</a>
+	</div>
+	<div class="filter">
+		<a href="javascript:;">全部显示</a>
+		<a href="javascript:;">HTML</a>
+		<a href="javascript:;">CSS</a>
+		<a href="javascript:;">JavaScript</a>
+	</div>
+	<ul class="question-list">
+		{{each questions}}
+		<li class="question" tag="{{$value.tag}}">
+			<div class="question-topic">
+				{{if $value.tag==0}}
+				<span></span>
+				{{/if}} {{if $value.tag==1}}
+				<span>[HTML]</span>
+				{{/if}} {{if $value.tag==2}}
+				<span>[CSS]</span>
+				{{/if}} {{if $value.tag==3}}
+				<span>[JavaScript]</span>
+				{{/if}} {{$value.question}}
+			</div>
+			{{if $value.type=='单选'}}
+			<ul class="options">
+				<li>
+					<span>A.</span>
+					{{$value.optionA}}
+				</li>
+				<li>
+					<span>B.</span>
+					{{$value.optionB}}
+				</li>
+				<li>
+					<span>C.</span>
+					{{$value.optionC}}
+				</li>
+				<li>
+					<span>D.</span>
+					{{$value.optionD}}
+				</li>
+			</ul>
+			{{/if}}
+			<div class="question-answer">
+				<div class="answer">
+					{{if $value.type=='单选'}}
+					<span>正确答案:</span>
+					{{/if}}
+					{{if $value.type=='简答'}}
+					<span>参考答案:</span>
+					{{/if}}
+					{{$value.answer}}
+				</div>
+				<div class="analysis">
+					<span>答案解析:</span>
+					{{$value.analysis}}
+				</div>
+			</div>
+			<div class="methods">
+				<div class="uploader">上传者:{{$value.uploader}}</div>
+				<a href="/render/delete?id={{$value.id}}">删除</a>
+				<a
+					href="/render/edit?id={{$value.id}}&tag={{$value.tag}}&answer={{$value.answer}}&analysis={{$value.analysis}}&type={{$value.type}}">编辑</a>
+			</div>
+		</li>
+		{{/each}}
+	</ul>
+	<script src="/public/js/index.js"></script>
+</body>
+
 </html>

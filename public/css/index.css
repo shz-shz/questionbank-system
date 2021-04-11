@@ -39,13 +39,14 @@ ul li {
 .top {
     width: 80%;
     height: 50px;
-    margin: 40px auto;
+    margin: 20px auto;
     margin-top: 100px;
     border-bottom: 2px solid black;
 }
 
 .top-button {
-    display: inline-block;
+    /* display: inline-block; */
+    float: right;
     height: 40px;
     width: auto;
     padding: 0px 10px;
@@ -55,6 +56,25 @@ ul li {
     color: white;
     background-color: rgb(37, 199, 37);
     border-radius: 8px;
+}
+
+.filter {
+    height: 50px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.filter a {
+    display: block;
+    float: left;
+    height: 35px;
+    width: auto;
+    padding: 0px 10px;
+    margin: 0 10px;
+    color: black;
+    border:2px solid black;
+    line-height: 35px;
+    border-radius: 5px;
 }
 
 .question-list {
