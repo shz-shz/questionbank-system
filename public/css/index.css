@@ -37,28 +37,6 @@ ul li {
 }
 
 .top {
-<<<<<<< Updated upstream
-    width: 80%;
-    height: 50px;
-    margin: 40px auto;
-    margin-top: 100px;
-    border-bottom: 2px solid black;
-}
-
-.top-button {
-    display: inline-block;
-    height: 40px;
-    width: auto;
-    padding: 0px 10px;
-    margin: 0 5px;
-    /* border: 1px solid black; */
-    line-height: 40px;
-    color: white;
-    background-color: rgb(37, 199, 37);
-    border-radius: 8px;
-}
-
-=======
 	width: 80%;
 	height: 50px;
 	margin: 20px auto;
@@ -104,7 +82,32 @@ ul li {
 	border: 2px solid rgb(114, 114, 114);
 }
 
->>>>>>> Stashed changes
+=======
+.filter {
+    height: 50px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.filter a {
+    display: block;
+    float: left;
+    height: 35px;
+    width: auto;
+    padding: 0px 10px;
+    margin: 0 10px;
+    color: black;
+    border:2px solid black;
+    line-height: 35px;
+    border-radius: 5px;
+}
+
+.filter a:hover {
+    color: rgb(114, 114, 114);
+    border:2px solid rgb(114, 114, 114);
+}
+
+>>>>>>> main
 .question-list {
 	width: 78%;
 	margin: 0px auto;
