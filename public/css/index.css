@@ -1,42 +1,43 @@
 * {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 a {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .header {
-    margin: 0 auto;
-    height:70px;
-    width: 100%;
-    background-color: black;
-    line-height: 70px;
+	margin: 0 auto;
+	height: 70px;
+	width: 100%;
+	background-color: black;
+	line-height: 70px;
 }
 
 .nav {
-    margin: auto;
-    height: 70px;
-    width: 80%;
-    /* background-color: white; */
-    line-height: 70px;
+	margin: auto;
+	height: 70px;
+	width: 80%;
+	/* background-color: white; */
+	line-height: 70px;
 }
 
 .logo {
-    display: block;
-    float:left;
-    height: 70px;
-    line-height: 70px;
-    color: white;
-    font-size: 30px;
+	display: block;
+	float: left;
+	height: 70px;
+	line-height: 70px;
+	color: white;
+	font-size: 30px;
 }
 
 ul li {
-    list-style: none;
+	list-style: none;
 }
 
 .top {
+<<<<<<< Updated upstream
     width: 80%;
     height: 50px;
     margin: 40px auto;
@@ -57,62 +58,109 @@ ul li {
     border-radius: 8px;
 }
 
+=======
+	width: 80%;
+	height: 50px;
+	margin: 20px auto;
+	margin-top: 100px;
+	border-bottom: 2px solid black;
+}
+
+.top-button {
+	/* display: inline-block; */
+	float: right;
+	height: 40px;
+	width: auto;
+	padding: 0px 10px;
+	margin: 0 5px;
+	/* border: 1px solid black; */
+	line-height: 40px;
+	color: white;
+	background-color: rgb(37, 199, 37);
+	border-radius: 8px;
+}
+
+.filter {
+	height: 50px;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.filter a {
+	display: block;
+	float: left;
+	height: 35px;
+	width: auto;
+	padding: 0px 10px;
+	margin: 0 10px;
+	color: black;
+	border: 2px solid black;
+	line-height: 35px;
+	border-radius: 5px;
+}
+
+.filter a:hover {
+	color: rgb(114, 114, 114);
+	border: 2px solid rgb(114, 114, 114);
+}
+
+>>>>>>> Stashed changes
 .question-list {
-    width: 78%;
-    margin: 0px auto;
+	width: 78%;
+	margin: 0px auto;
 }
 
 .question {
-    display: block;
-    width: 100%;
-    padding: 10px auto;
-    margin: 10px auto;
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
+	display: block;
+	width: 100%;
+	padding: 10px auto;
+	margin: 10px auto;
+	border-top: 1px solid grey;
+	border-bottom: 1px solid grey;
 }
 
 .question-topic {
-    font-size: 18px;
-    height: 40px;
-    line-height: 40px;
+	font-size: 18px;
+	height: 40px;
+	line-height: 40px;
 }
 
 .question-topic span {
-    color: grey;
-    font-size: 16px;
-    height: 40px;
-    line-height: 40px;
+	color: grey;
+	font-size: 16px;
+	height: 40px;
+	line-height: 40px;
 }
 
 .options {
-    display: block;
-    padding: 0 10px;
+	display: block;
+	padding: 0 10px;
 }
 
 .options li {
-    margin: 5px auto;
+	margin: 5px auto;
 }
 
 .answer {
-    margin-top: 10px;
+	margin-top: 10px;
 }
 
 .analysis {
-    margin: 10px auto;
+	margin: 10px auto;
 }
 
 .methods {
-    height: 30px;
+	height: 30px;
 }
 
 .uploader {
-    float: left;
-    font-size: 14px;
-    color: grey;
+	float: left;
+	font-size: 14px;
+	color: grey;
 }
 
 .methods a {
-    display: block;
-    float: right;
-    margin: 0px 10px;
+	display: block;
+	float: right;
+	margin: 0px 10px;
 }
