@@ -6,5 +6,14 @@ exports.register = (req, res) => {
     .then((result) => result)
     .then((result) => {
       res.send(result)
-    } )
+    })
+}
+
+//登录
+exports.login = (req, res) => {
+  loginDao.login(req)
+    .then((result) => result)
+    .then((result) => {
+    res.send(result)
+  })
 }
