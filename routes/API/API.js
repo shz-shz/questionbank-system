@@ -8,7 +8,8 @@ const loginController = require('../../controller/loginController')
 router.get('/get-all-questions', getQuestionsController.getAllQuestions)
 router.get('/get-10-random-questions', getQuestionsController.get10RandomQuestions)
 
-//注册
+//注册、登录
 router.post('/register', loginController.register)
+router.post('/login', loginController.login)
 
 module.exports = router;
