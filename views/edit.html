@@ -1,53 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>手动添加题目</title>
-		<link rel="stylesheet" href="/public/css/edit.css" />
-	</head>
 
-	<body>
-		<div class="top">手动添加题目</div>
-		<form action="/add-questions/edit" method="POST" id="question-upload">
-			<input type="hidden" name="id" value="{{question.id}}" />
-			<input type="hidden" name="type" value="{{question.type}}" />
-			<label for="uploader" class="label">上传者:</label>
-			<input type="text" name="uploader" class="input_text" id="uploader" placeholder="请输入上传者" value="{{question.uploader}}" />
-			<label for="topic" class="label">题目:</label>
-			<input type="text" name="question" class="input_text" id="topic" placeholder="请输入题目" value="{{question.question}}" />
-			<label for="" class="label">试题类型</label>
-			<select name="tag">
-				<option value="0"></option>
-				<option value="1">HTML</option>
-				<option value="2">CSS</option>
-				<option value="3">JavaScript</option>
-			</select>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>手动添加题目</title>
+	<link rel="stylesheet" href="/public/css/edit.css" />
+</head>
+
+<body>
+	<div class="top">编辑题目</div>
+	<form action="/add-questions/edit" method="POST" id="question-upload">
+		<input type="hidden" name="id" value="{{question.id}}" />
+		<input type="hidden" name="type" value="{{question.type}}" />
+		<label for="uploader" class="label">上传者:</label>
+		<input type="text" name="uploader" class="input_text" id="uploader" placeholder="请输入上传者"
+			value="{{question.uploader}}" />
+		<label for="topic" class="label">题目:</label>
+		<input type="text" name="question" class="input_text" id="topic" placeholder="请输入题目"
+			value="{{question.question}}" />
+		<label for="" class="label">试题类型</label>
+		<select name="tag">
+			<option value="0"></option>
+			<option value="1">HTML</option>
+			<option value="2">CSS</option>
+			<option value="3">JavaScript</option>
+		</select>
+		<div id="options">
 			<label for="" class="label">请输入选项:</label>
 			<label for="optionA" class="label">A:</label>
-			<input type="text" name="optionA" class="input_text" id="optionA" placeholder="请输入A选项内容" value="{{question.optionA}}" />
+			<input type="text" name="optionA" class="input_text" id="optionA" placeholder="请输入A选项内容"
+				value="{{question.optionA}}" />
 			<label for="optionB" class="label">B:</label>
-			<input type="text" name="optionB" class="input_text" id="optionB" placeholder="请输入B选项内容" value="{{question.optionB}}" />
+			<input type="text" name="optionB" class="input_text" id="optionB" placeholder="请输入B选项内容"
+				value="{{question.optionB}}" />
 			<label for="optionC" class="label">C:</label>
-			<input type="text" name="optionC" class="input_text" id="optionC" placeholder="请输入C选项内容" value="{{question.optionC}}" />
+			<input type="text" name="optionC" class="input_text" id="optionC" placeholder="请输入C选项内容"
+				value="{{question.optionC}}" />
 			<label for="optionD" class="label">D:</label>
-			<input type="text" name="optionD" class="input_text" id="optionD" placeholder="请输入D选项内容" value="{{question.optionD}}" />
-			<label for="" class="label">请输入正确答案:</label>
-			<div class="answers">
-				<label for="A">A:</label>
-				<input type="radio" class="radio" id="A" name="answer" value="A" />
-				<label for="B">B:</label>
-				<input type="radio" class="radio" id="B" name="answer" value="B" />
-				<label for="C">C:</label>
-				<input type="radio" class="radio" id="C" name="answer" value="C" />
-				<label for="D">D:</label>
-				<input type="radio" class="radio" id="D" name="answer" value="D" />
-			</div>
-			<label for="analysis" class="label">题目解析:</label>
-			<textarea form="question-upload" name="analysis" class="text_area" id="analysis" placeholder="请输入题目解析"></textarea>
-			<input type="submit" value="提交" class="submit" />
-		</form>
-		<script src="/public/js/edit.js"></script>
-	</body>
+			<input type="text" name="optionD" class="input_text" id="optionD" placeholder="请输入D选项内容"
+				value="{{question.optionD}}" />
+		</div>
+		<label for="" class="label">请输入答案:</label>
+		<div class="answers">
+			<label for="A">A:</label>
+			<input type="radio" class="radio" id="A" name="answer" value="A" />
+			<label for="B">B:</label>
+			<input type="radio" class="radio" id="B" name="answer" value="B" />
+			<label for="C">C:</label>
+			<input type="radio" class="radio" id="C" name="answer" value="C" />
+			<label for="D">D:</label>
+			<input type="radio" class="radio" id="D" name="answer" value="D" />
+		</div>
+		<textarea form="question-upload" name="" class="text_area" id="answer_text" placeholder="请输入参考答案"></textarea>
+		<label for="analysis" class="label">题目解析:</label>
+		<textarea form="question-upload" name="analysis" class="text_area" id="analysis"
+			placeholder="请输入题目解析"></textarea>
+		<input type="submit" value="提交" class="submit" />
+	</form>
+	<script src="/public/js/edit.js"></script>
+</body>
+<script>
+
+</script>
+
 </html>
