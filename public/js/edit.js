@@ -1,5 +1,5 @@
 var answers = document.querySelector('.answers')
-var url = location.search.substr(1);
+var url = location.search.substr(1)
 
 var type = url.split('&')[2] //获取要求改的题的类型
 type = decodeURI(type)
@@ -14,14 +14,10 @@ topic.innerHTML = topic.getAttribute('value')
 
 var selected = url.split('&')[1] //根据获取到的题的tag自动选中标签
 selected = selected.split('=')[1]
-if (selected == 0)
-    select.children[0].setAttribute('selected', 'selected')
-else if (selected == 1)
-    select.children[1].setAttribute('selected', 'selected')
-else if (selected == 2)
-    select.children[2].setAttribute('selected', 'selected')
-else if (selected == 3)
-    select.children[3].setAttribute('selected', 'selected')
+if (selected == 0) select.children[0].setAttribute('selected', 'selected')
+else if (selected == 1) select.children[1].setAttribute('selected', 'selected')
+else if (selected == 2) select.children[2].setAttribute('selected', 'selected')
+else if (selected == 3) select.children[3].setAttribute('selected', 'selected')
 
 if (type == '单选') {
 
@@ -86,10 +82,14 @@ if (type == '单选') {
     answerarea.removeAttribute('name') //去除name属性阻止简答题的答案表单提交
 }
 
-
 var analysisarea = document.querySelector('#analysis') //将获取到的题目分析填入分析表单中
+<<<<<<< HEAD
 
 analysisarea.innerHTML = analysisarea.getAttribute('value')
 
 
 
+=======
+var analysisedit = url.split('&')[3].substr(9)
+analysisarea.innerHTML = decodeURI(analysisedit)
+>>>>>>> update: login & reformat js files
