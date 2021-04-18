@@ -11,9 +11,9 @@ const renderRouter = require('./routes/render')
 const { jwtInterceptor, jwtErrHandler } = require('./middlewares/jwtInterceptor')
 var app = express()
 
-app.use(cors());
+app.use(cors())
 app.engine('html', require('express-art-template')) //配置express中的art-template模板
-app.set('views', path.join(__dirname, 'views')); //设置渲染目录
+app.set('views', path.join(__dirname, 'views')) //设置渲染目录
 app.use(bodyparser.urlencoded({ extended: false })) //配置获取POST请求体的body包
 app.use(bodyparser.json())
 
@@ -32,7 +32,6 @@ app.use('/api', APIRouter)
 app.use('/render', renderRouter)
 // app.use(router)
 
-
 app.listen(80, function () {
-    console.log('Running...')
+	console.log('Running...')
 })

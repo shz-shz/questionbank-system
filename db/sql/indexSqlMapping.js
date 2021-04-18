@@ -1,5 +1,5 @@
 const indexSql = {
-  selectAll: 'SELECT * FROM questions'
+	selectAll: 'SELECT * FROM questions',
 }
 
 module.exports = indexSql
