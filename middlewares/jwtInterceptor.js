@@ -10,25 +10,21 @@ const jwtInterceptor = (req, res, next) => {
 
 	jwt.verify(token, $SECRET, (err, user) => {
 		if (err) {
-			console.log(err)
-			return res.sendStatus(403)
+			if (err.name === 'TokenExpiredError') {
+				return res.status(401).send({
+					msg: 'Token Expired.',
+				})
+			} else if (err.name === 'UnauthorizedError') {
+				return res.status(401).send({
+					msg: 'You are unauthorized.',
+				})
+			}
 		}
 		req.user = user
 		next()
 	})
 }
 
-const jwtErrHandler = (err, req, res, next) => {
-	if (err.name === 'UnauthorizedError') {
-		res.status(401).send({
-			msg: 'You are unauthorized.',
-		})
-	} else {
-		next()
-	}
-}
-
 module.exports = {
 	jwtInterceptor,
-	jwtErrHandler,
 }
