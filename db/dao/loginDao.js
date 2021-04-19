@@ -66,10 +66,17 @@ module.exports = {
 						} else {
 							const crypto_pwd = queryResult[0].password
 							if (pwd_compare(raw_pwd, crypto_pwd)) {
-								const token = jwt.sign({ id: queryResult[0].id }, $SECRET, {
-									expiresIn: '48',
-									algorithm: 'HS256',
-								})
+								const token = jwt.sign(
+									{
+										id: queryResult[0].id,
+										user: true,
+									},
+									$SECRET,
+									{
+										expiresIn: '48h',
+										algorithm: 'HS256',
+									}
+								)
 								resolve([
 									{
 										status: 1,

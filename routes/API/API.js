@@ -9,8 +9,4 @@ router.get('/get-10-random-questions', getQuestionsController.get10RandomQuestio
 router.get('/get-10-random-multiple-choice-questions', getQuestionsController.get10RandomMultipleChoiceQuestions)
 router.get('/get-5-random-short-answer-questions', getQuestionsController.get5RandomShortAnswerQuestions)
 
-//注册、登录
-router.post('/register', loginController.register)
-router.post('/login', loginController.login)
-
 module.exports = router

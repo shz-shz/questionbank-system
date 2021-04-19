@@ -8,6 +8,7 @@ const indexRouter = require('./routes/index')
 const addQuestionsRouter = require('./routes/addQuestions')
 const APIRouter = require('./routes/API/API')
 const renderRouter = require('./routes/render')
+const accountRouter = require('./routes/account')
 const { jwtInterceptor, jwtErrHandler } = require('./middlewares/jwtInterceptor')
 var app = express()
 
@@ -26,10 +27,11 @@ app.use('/public/', express.static(path.join(__dirname, './public/'))) //开放�
 app.use(jwtInterceptor)
 //处理token核验不通过的请求
 app.use(jwtErrHandler)
-app.use('/', indexRouter)
+app.use('/', jwtInterceptor, indexRouter)
+app.use('/api', jwtInterceptor, APIRouter)
+app.use('/render', jwtInterceptor, renderRouter)
 app.use('/add-questions', addQuestionsRouter)
-app.use('/api', APIRouter)
-app.use('/render', renderRouter)
+app.use('/account', accountRouter)
 // app.use(router)
 
 app.listen(80, function () {
