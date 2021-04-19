@@ -27,7 +27,7 @@ exports.get10RandomMultipleChoiceQuestions = (req, res) => {
     })
 }
 
-//接口：随机获取10道简答题
+//接口：随机获取5道简答题
 exports.get5RandomShortAnswerQuestions = (req, res) => {
   getQuestionsDao.get5RandomShortAnswerQuestions()
     .then((result) => result)
