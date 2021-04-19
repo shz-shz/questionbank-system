@@ -1,90 +1,90 @@
-const { query } = require('express');
-const { connection } = require('mongoose');
+const { query } = require('express')
+const { connection } = require('mongoose')
 const mysql = require('mysql')
-const $conf = require('../../conf/mysql')
+const $single = require('../../conf/mysql_single')
 const $sql = require('../sql/getQuestionSqlMapping')
 
-const pool = mysql.createPool($conf);
+const pool = mysql.createPool($single)
 
 module.exports = {
-  getAllQuestions: (req, res) => {
-    return new Promise((resolve, reject) => {
-      pool.getConnection((err, connection) => {
-        if (err) {
-          reject(new Error('mistake in getAllQuestions'))
-        }
-        const promise = new Promise((resolve, reject) => {
-          connection.query($sql.getAllQuestionsSelect, (err, queryResult) => {
-            if (err) {
-              reject(new Error('mistake in getAllQuestions query'))
-            }
-            const result = JSON.parse(JSON.stringify(queryResult));
-            connection.release()
-            resolve(result)
-          })
-        }).catch(() => { })
-        resolve(promise)
-      })
-    }).catch(() => { })
-  },
-  get10RandomQuestions: (req, res) => {
-    return new Promise((resolve, reject) => {
-      pool.getConnection((err, connection) => {
-        if (err) {
-          reject(new Error('mistake in get10RandomQuestions'))
-        }
-        const promise = new Promise((resolve, reject) => {
-          connection.query($sql.get10RandomQuestionsSelect, (err, queryResult) => {
-            if (err) {
-              reject(new Error('mistake in get10RandomQuestions query'))
-            }
-            const result = JSON.parse(JSON.stringify(queryResult));
-            connection.release()
-            resolve(result)
-          })
-        }).catch(() => { })
-        resolve(promise)
-      })
-    }).catch(() => { })
-  },
-  get10RandomMultipleChoiceQuestions: (req, res) => {
-    return new Promise((resolve, reject) => {
-      pool.getConnection((err, connection) => {
-        if (err) {
-          reject(new Error('mistake in get10RandomMultipleChoiceQuestions'))
-        }
-        const promise = new Promise((resolve, reject) => {
-          connection.query($sql.get10RandomMultipleChoiceQuestionsSelect, (err, queryResult) => {
-            if (err) {
-              reject(new Error('mistake in get10RandomMultipleChoiceQuestions query'))
-            }
-            const result = JSON.parse(JSON.stringify(queryResult));
-            connection.release()
-            resolve(result)
-          })
-        }).catch(() => { })
-        resolve(promise)
-      })
-    }).catch(() => { })
-  },
-  get5RandomShortAnswerQuestions: (req, res) => {
-    return new Promise((resolve, reject) => {
-      pool.getConnection((err, connection) => {
-        if (err) {
-          reject(new Error('mistake in get10RandomShortAnswerQuestions'))
-        }
-        const promise = new Promise((resolve, reject) => {
-          connection.query($sql.get5RandomShortAnswerQuestionsSelect, (err, queryResult) => {
-            if (err) {
-              reject(new Error('mistake in get10RandomShortAnswerQuestions query'))
-            }
-            const result = JSON.parse(JSON.stringify(queryResult));
-            connection.release()
-            resolve(result)
-          })
-        }).catch(() => { })
-        resolve(promise)
-      })
-    }).catch(() => { })
-  }
+	getAllQuestions: (req, res) => {
+		return new Promise((resolve, reject) => {
+			pool.getConnection((err, connection) => {
+				if (err) {
+					reject(new Error('mistake in getAllQuestions'))
+				}
+				const promise = new Promise((resolve, reject) => {
+					connection.query($sql.getAllQuestionsSelect, (err, queryResult) => {
+						if (err) {
+							reject(new Error('mistake in getAllQuestions query'))
+						}
+						const result = JSON.parse(JSON.stringify(queryResult))
+						connection.release()
+						resolve(result)
+					})
+				}).catch(() => {})
+				resolve(promise)
+			})
+		}).catch(() => {})
+	},
+	get10RandomQuestions: (req, res) => {
+		return new Promise((resolve, reject) => {
+			pool.getConnection((err, connection) => {
+				if (err) {
+					reject(new Error('mistake in get10RandomQuestions'))
+				}
+				const promise = new Promise((resolve, reject) => {
+					connection.query($sql.get10RandomQuestionsSelect, (err, queryResult) => {
+						if (err) {
+							reject(new Error('mistake in get10RandomQuestions query'))
+						}
+						const result = JSON.parse(JSON.stringify(queryResult))
+						connection.release()
+						resolve(result)
+					})
+				}).catch(() => {})
+				resolve(promise)
+			})
+		}).catch(() => {})
+	},
+	get10RandomMultipleChoiceQuestions: (req, res) => {
+		return new Promise((resolve, reject) => {
+			pool.getConnection((err, connection) => {
+				if (err) {
+					reject(new Error('mistake in get10RandomMultipleChoiceQuestions'))
+				}
+				const promise = new Promise((resolve, reject) => {
+					connection.query($sql.get10RandomMultipleChoiceQuestionsSelect, (err, queryResult) => {
+						if (err) {
+							reject(new Error('mistake in get10RandomMultipleChoiceQuestions query'))
+						}
+						const result = JSON.parse(JSON.stringify(queryResult))
+						connection.release()
+						resolve(result)
+					})
+				}).catch(() => {})
+				resolve(promise)
+			})
+		}).catch(() => {})
+	},
+	get5RandomShortAnswerQuestions: (req, res) => {
+		return new Promise((resolve, reject) => {
+			pool.getConnection((err, connection) => {
+				if (err) {
+					reject(new Error('mistake in get10RandomShortAnswerQuestions'))
+				}
+				const promise = new Promise((resolve, reject) => {
+					connection.query($sql.get5RandomShortAnswerQuestionsSelect, (err, queryResult) => {
+						if (err) {
+							reject(new Error('mistake in get10RandomShortAnswerQuestions query'))
+						}
+						const result = JSON.parse(JSON.stringify(queryResult))
+						connection.release()
+						resolve(result)
+					})
+				}).catch(() => {})
+				resolve(promise)
+			})
+		}).catch(() => {})
+	},
 }
