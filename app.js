@@ -26,8 +26,6 @@ app.use('/add-questions', addQuestionsRouter)
 app.use('/api', APIRouter)
 app.use('/render', renderRouter)
 
-
-
 app.listen(80, function () {
     console.log('Running...')
 })

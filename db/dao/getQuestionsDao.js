@@ -7,7 +7,7 @@ const $sql = require('../sql/getQuestionSqlMapping')
 const pool = mysql.createPool($conf);
 
 module.exports = {
-  getAllQuestions: (req,res) => {
+  getAllQuestions: (req, res) => {
     return new Promise((resolve, reject) => {
       pool.getConnection((err, connection) => {
         if (err) {
@@ -25,7 +25,7 @@ module.exports = {
         }).catch(() => { })
         resolve(promise)
       })
-    }).catch(()=>{})
+    }).catch(() => { })
   },
   get10RandomQuestions: (req, res) => {
     return new Promise((resolve, reject) => {
@@ -45,6 +45,46 @@ module.exports = {
         }).catch(() => { })
         resolve(promise)
       })
-    }).catch(()=>{})
+    }).catch(() => { })
+  },
+  get10RandomMultipleChoiceQuestions: (req, res) => {
+    return new Promise((resolve, reject) => {
+      pool.getConnection((err, connection) => {
+        if (err) {
+          reject(new Error('mistake in get10RandomMultipleChoiceQuestions'))
+        }
+        const promise = new Promise((resolve, reject) => {
+          connection.query($sql.get10RandomMultipleChoiceQuestionsSelect, (err, queryResult) => {
+            if (err) {
+              reject(new Error('mistake in get10RandomMultipleChoiceQuestions query'))
+            }
+            const result = JSON.parse(JSON.stringify(queryResult));
+            connection.release()
+            resolve(result)
+          })
+        }).catch(() => { })
+        resolve(promise)
+      })
+    }).catch(() => { })
+  },
+  get5RandomShortAnswerQuestions: (req, res) => {
+    return new Promise((resolve, reject) => {
+      pool.getConnection((err, connection) => {
+        if (err) {
+          reject(new Error('mistake in get10RandomShortAnswerQuestions'))
+        }
+        const promise = new Promise((resolve, reject) => {
+          connection.query($sql.get5RandomShortAnswerQuestionsSelect, (err, queryResult) => {
+            if (err) {
+              reject(new Error('mistake in get10RandomShortAnswerQuestions query'))
+            }
+            const result = JSON.parse(JSON.stringify(queryResult));
+            connection.release()
+            resolve(result)
+          })
+        }).catch(() => { })
+        resolve(promise)
+      })
+    }).catch(() => { })
   }
 }

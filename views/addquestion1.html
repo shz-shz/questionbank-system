@@ -15,7 +15,8 @@
 		<label for="uploader" class="label">上传者</label>
 		<input type="text" name="uploader" class="input_text" id="uploader" placeholder="请输入上传者" />
 		<label for="topic" class="label">题目</label>
-		<input type="text" name="question" class="input_text" id="topic" placeholder="请输入题目" />
+		<!-- <input type="text" name="question" class="input_text" id="topic" placeholder="请输入题目" /> -->
+		<textarea form="question-upload" name="question" class="text_area" id="topic" placeholder="请输入题目"></textarea>
 		<label for="tag" class="label">试题标签</label>
 		<select name="tag" id="tag">
 			<option value="0"></option>
@@ -27,6 +28,8 @@
 		<div class="types">
 			<label for="danxuan">单选:</label>
 			<input type="radio" class="radio" id="danxuan" name="type" value="单选" checked="checked" />
+			<label for="danxuan">填空:</label>
+			<input type="radio" class="radio" id="tiankong" name="type" value="填空" />
 			<label for="jianda">简答:</label>
 			<input type="radio" class="radio" id="jianda" name="type" value="简答" />
 		</div>
@@ -51,6 +54,16 @@
 			<input type="radio" class="radio" id="C" name="answer" value="C" />
 			<label for="D">D:</label>
 			<input type="radio" class="radio" id="D" name="answer" value="D" />
+		</div>
+		<div id="blanks">
+			<label for="answerA" class="label">第一空:</label>
+			<input type="text" name="" class="input_text" id="answerA" placeholder="请输入第一空答案" />
+			<label for="answerB" class="label">第二空:</label>
+			<input type="text" name="" class="input_text" id="answerB" placeholder="请输入第二空答案" />
+			<label for="answerC" class="label">第三空:</label>
+			<input type="text" name="" class="input_text" id="answerC" placeholder="请输入第三空答案" />
+			<label for="answerD" class="label">第四空:</label>
+			<input type="text" name="" class="input_text" id="answerD" placeholder="请输入第四空答案" />
 		</div>
 		<textarea form="question-upload" class="text_area" name="" id="answer_text" placeholder="请输入参考答案"></textarea>
 		<label for="analysis" class="label">题目解析</label>

@@ -32,6 +32,22 @@ a {
     font-size: 30px;
 }
 
+.link {
+    display: block;
+    float:right;
+    height: 70px;
+    line-height: 70px;
+    font-size: 18px;
+}
+
+.link a{
+    color: white;
+}
+
+.link a:hover {
+    color: rgb(235, 235, 235);
+}
+
 ul li {
     list-style: none;
 }
@@ -58,13 +74,17 @@ ul li {
     border-radius: 8px;
 }
 
+.top-button:hover {
+    background-color: rgb(43, 216, 52);
+}
+
 .filter {
     height: 50px;
     width: 80%;
     margin: 0 auto;
 }
 
-.filter a {
+.filter_button {
     display: block;
     float: left;
     height: 35px;
@@ -77,9 +97,19 @@ ul li {
     border-radius: 5px;
 }
 
-.filter a:hover {
+.filter_button:hover {
     color: rgb(114, 114, 114);
     border:2px solid rgb(114, 114, 114);
+}
+
+.filter_checked {
+    color: white;
+    background-color: black;
+    border:2px solid black;
+}
+
+.filter_checked:hover {
+    color: rgb(235, 235, 235);
 }
 
 .question-list {
@@ -98,7 +128,7 @@ ul li {
 
 .question-topic {
     font-size: 18px;
-    height: 40px;
+    height: auto;
     line-height: 40px;
 }
 
@@ -140,4 +170,8 @@ ul li {
     display: block;
     float: right;
     margin: 0px 10px;
+}
+
+.methods a:hover {
+    color:rgb(120, 120, 255)
 }

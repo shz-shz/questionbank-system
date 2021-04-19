@@ -13,17 +13,19 @@
 	<div class="header">
 		<ul class="nav">
 			<li class="logo">前端题库系统</li>
+			<li class="link"><a href="http://feeling.cheerful.today:8080/">去做题</a></li>
 		</ul>
+
 	</div>
 	<div class="top">
 		<a href="/render/addquestion2" class="top-button">批量添加题目</a>
 		<a href="/render/addquestion1" class="top-button">手动添加题目</a>
 	</div>
 	<div class="filter">
-		<a href="javascript:;">全部显示</a>
-		<a href="javascript:;">HTML</a>
-		<a href="javascript:;">CSS</a>
-		<a href="javascript:;">JavaScript</a>
+		<a href="javascript:;" class="filter_button">全部显示</a>
+		<a href="javascript:;" class="filter_button">HTML</a>
+		<a href="javascript:;" class="filter_button">CSS</a>
+		<a href="javascript:;" class="filter_button">JavaScript</a>
 	</div>
 	<ul class="question-list">
 		{{each questions}}
@@ -77,8 +79,7 @@
 			<div class="methods">
 				<div class="uploader">上传者:{{$value.uploader}}</div>
 				<a href="/render/delete?id={{$value.id}}">删除</a>
-				<a
-					href="/render/edit?id={{$value.id}}&tag={{$value.tag}}&answer={{$value.answer}}&analysis={{$value.analysis}}&type={{$value.type}}">编辑</a>
+				<a href="/render/edit?id={{$value.id}}&tag={{$value.tag}}&type={{$value.type}}">编辑</a>
 			</div>
 		</li>
 		{{/each}}
