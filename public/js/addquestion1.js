@@ -18,7 +18,6 @@ type.children[1].addEventListener('click', function () {
 	options.children[4].removeAttribute('value')
 	options.children[6].removeAttribute('value')
 	options.children[8].removeAttribute('value')
-
 	answers.children[1].setAttribute('name', 'answer') //将单选题的单选按钮加上name属性来进行表单提交
 	answers.children[3].setAttribute('name', 'answer')
 	answers.children[5].setAttribute('name', 'answer')
@@ -65,7 +64,6 @@ type.children[5].addEventListener('click', function () {
 	options.children[4].setAttribute('value', 'null')
 	options.children[6].setAttribute('value', 'null')
 	options.children[8].setAttribute('value', 'null')
-
 	answers.children[1].removeAttribute('name') //将单选题的答案提交表单中的name属性去除阻止提交
 	answers.children[3].removeAttribute('name')
 	answers.children[5].removeAttribute('name')
