@@ -3,7 +3,7 @@ const router = express.Router()
 const indexController = require('../controller/indexController')
 const addQuestionsController = require('../controller/addQuestionsController')
 
-router.get('/', indexController.getIndex)
+//router.get('/', indexController.getIndex)
 
 router.get('/addquestion1', (req, res) => {
 	res.render('../views/addquestion1.html')

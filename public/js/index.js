@@ -8,7 +8,7 @@ filters.children[0].addEventListener('click', function () {
 	for (var i = 0; i <= 3; i++) {
 		filters.children[i].setAttribute('class', 'filter_button')
 	}
-	this.setAttribute('class', 'filter_button filter_checked')
+	this.setAttribute('class', 'filter_checked')
 })
 filters.children[1].addEventListener('click', function () {
 	//显示HTML题目
@@ -19,7 +19,7 @@ filters.children[1].addEventListener('click', function () {
 	for (var i = 0; i <= 3; i++) {
 		filters.children[i].setAttribute('class', 'filter_button')
 	}
-	this.setAttribute('class', 'filter_button filter_checked')
+	this.setAttribute('class', 'filter_checked')
 })
 filters.children[2].addEventListener('click', function () {
 	//显示CSS题目
@@ -30,7 +30,7 @@ filters.children[2].addEventListener('click', function () {
 	for (var i = 0; i <= 3; i++) {
 		filters.children[i].setAttribute('class', 'filter_button')
 	}
-	this.setAttribute('class', 'filter_button filter_checked')
+	this.setAttribute('class', 'filter_checked')
 })
 filters.children[3].addEventListener('click', function () {
 	//显示JavaScript题目
@@ -41,5 +41,5 @@ filters.children[3].addEventListener('click', function () {
 	for (var i = 0; i <= 3; i++) {
 		filters.children[i].setAttribute('class', 'filter_button')
 	}
-	this.setAttribute('class', 'filter_button filter_checked')
+	this.setAttribute('class', 'filter_checked')
 })

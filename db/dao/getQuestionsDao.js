@@ -22,10 +22,10 @@ module.exports = {
 						connection.release()
 						resolve(result)
 					})
-				}).catch(() => {})
+				}).catch(() => { })
 				resolve(promise)
 			})
-		}).catch(() => {})
+		}).catch(() => { })
 	},
 	get10RandomQuestions: (req, res) => {
 		return new Promise((resolve, reject) => {
@@ -42,10 +42,10 @@ module.exports = {
 						connection.release()
 						resolve(result)
 					})
-				}).catch(() => {})
+				}).catch(() => { })
 				resolve(promise)
 			})
-		}).catch(() => {})
+		}).catch(() => { })
 	},
 	get10RandomMultipleChoiceQuestions: (req, res) => {
 		return new Promise((resolve, reject) => {
@@ -62,29 +62,29 @@ module.exports = {
 						connection.release()
 						resolve(result)
 					})
-				}).catch(() => {})
+				}).catch(() => { })
 				resolve(promise)
 			})
-		}).catch(() => {})
+		}).catch(() => { })
 	},
 	get5RandomShortAnswerQuestions: (req, res) => {
 		return new Promise((resolve, reject) => {
 			pool.getConnection((err, connection) => {
 				if (err) {
-					reject(new Error('mistake in get10RandomShortAnswerQuestions'))
+					reject(new Error('mistake in get5RandomShortAnswerQuestions'))
 				}
 				const promise = new Promise((resolve, reject) => {
 					connection.query($sql.get5RandomShortAnswerQuestionsSelect, (err, queryResult) => {
 						if (err) {
-							reject(new Error('mistake in get10RandomShortAnswerQuestions query'))
+							reject(new Error('mistake in get5RandomShortAnswerQuestions query'))
 						}
 						const result = JSON.parse(JSON.stringify(queryResult))
 						connection.release()
 						resolve(result)
 					})
-				}).catch(() => {})
+				}).catch(() => { })
 				resolve(promise)
 			})
-		}).catch(() => {})
+		}).catch(() => { })
 	},
 }

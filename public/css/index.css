@@ -103,9 +103,17 @@ ul li {
 }
 
 .filter_checked {
+	display: block;
+	float: left;
+	height: 35px;
+	width: auto;
+	padding: 0px 10px;
+	margin: 0 10px;
 	color: white;
-	background-color: black;
 	border: 2px solid black;
+	line-height: 35px;
+	border-radius: 5px;
+	background-color: black;
 }
 
 .filter_checked:hover {
@@ -134,13 +142,13 @@ ul li {
 	border-radius: 8px;
 }
 
-.filter {
+/* .filter {
 	height: 50px;
 	width: 80%;
 	margin: 0 auto;
-}
+} */
 
-.filter a {
+/* .filter a {
 	display: block;
 	float: left;
 	height: 35px;
@@ -156,7 +164,7 @@ ul li {
 .filter a:hover {
 	color: rgb(114, 114, 114);
 	border: 2px solid rgb(114, 114, 114);
-}
+} */
 
 .question-list {
 	width: 78%;
@@ -174,7 +182,7 @@ ul li {
 
 .question-topic {
 	font-size: 18px;
-	height: 40px;
+	height: auto;
 	line-height: 40px;
 }
 
@@ -216,4 +224,8 @@ ul li {
 	display: block;
 	float: right;
 	margin: 0px 10px;
+}
+
+.methods a:hover {
+    color:rgb(120, 120, 255)
 }

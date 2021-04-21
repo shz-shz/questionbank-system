@@ -6,11 +6,13 @@ const pool = mysql.createPool($single)
 
 module.exports = {
 	addQuestions: (req, res) => {
+		if (req.body.type == '填空')
+			req.body.answer = req.body.answerA + ' ' + req.body.answerB + ' ' + req.body.answerC + ' ' + req.body.answerD
 		pool.getConnection((err, connection) => {
 			const params = [req.body.uploader, req.body.type, req.body.question, req.body.tag, req.body.optionA, req.body.optionB, req.body.optionC, req.body.optionD, req.body.answer, req.body.analysis]
 			connection.query($sql.manualUploadInsert, params, (err) => {
 				if (err) {
-					console.log(err)
+					console.log(err);
 				}
 				console.log('added!')
 				connection.release()
@@ -31,29 +33,19 @@ module.exports = {
 						connection.release()
 						resolve(queryResult)
 					})
-				}).catch(() => {})
+				}).catch(() => { })
 				resolve(promise)
 			})
-		}).catch(() => {})
+		}).catch(() => { })
 	},
 	editQuestion: (req, res) => {
+		if (req.body.type == '填空')
+			req.body.answer = req.body.answerA + ' ' + req.body.answerB + ' ' + req.body.answerC + ' ' + req.body.answerD
 		pool.getConnection((err, connection) => {
-			const params = [
-				req.body.uploader,
-				req.body.type,
-				req.body.question,
-				req.body.tag,
-				req.body.optionA,
-				req.body.optionB,
-				req.body.optionC,
-				req.body.optionD,
-				req.body.answer,
-				req.body.analysis,
-				req.body.id,
-			]
+			const params = [req.body.uploader, req.body.type, req.body.question, req.body.tag, req.body.optionA, req.body.optionB, req.body.optionC, req.body.optionD, req.body.answer, req.body.analysis, req.body.id]
 			connection.query($sql.editUpdate, params, (err) => {
 				if (err) {
-					console.log(err)
+					console.log(err);
 				}
 				console.log('updated!')
 				connection.release()
@@ -62,23 +54,44 @@ module.exports = {
 	},
 	addMultiQuestions: (req, res) => {
 		fs.readFile(req.files.myfile.path, (err, data) => {
-			if (err) return res.send(err)
-			data = data.toString()
-			var dataparse = data.split('\n')
-			var json = { questions: [] }
-			for (var i = 0; i < dataparse.length; i = i + 7) {
-				var newdata = {}
-				newdata.uploader = req.body.uploader
-				newdata.tag = req.body.tag
-				newdata.type = req.body.type
-				newdata.question = dataparse[i].replace(/[\r\n]/g, '')
-				newdata.optionA = dataparse[i + 1].substr(2).replace(/[\r\n]/g, '')
-				newdata.optionB = dataparse[i + 2].substr(2).replace(/[\r\n]/g, '')
-				newdata.optionC = dataparse[i + 3].substr(2).replace(/[\r\n]/g, '')
-				newdata.optionD = dataparse[i + 4].substr(2).replace(/[\r\n]/g, '')
-				newdata.answer = dataparse[i + 5].replace(/[\r\n]/g, '')
-				newdata.analysis = dataparse[i + 6].replace(/[\r\n]/g, '')
-				json.questions.push(newdata)
+			if (err)
+				return res.send(err)
+			if (req.body.type == '单选') {
+				data = data.toString()
+				var dataparse = data.split('\n')
+				var json = { questions: [] }
+				for (var i = 0; i < dataparse.length; i = i + 7) {
+					var newdata = {}
+					newdata.uploader = req.body.uploader
+					newdata.tag = req.body.tag
+					newdata.type = req.body.type
+					newdata.question = dataparse[i]
+					newdata.optionA = dataparse[i + 1].substr(2).replace(/[\r\n]/g, "")
+					newdata.optionB = dataparse[i + 2].substr(2).replace(/[\r\n]/g, "")
+					newdata.optionC = dataparse[i + 3].substr(2).replace(/[\r\n]/g, "")
+					newdata.optionD = dataparse[i + 4].substr(2).replace(/[\r\n]/g, "")
+					newdata.answer = dataparse[i + 5].replace(/[\r\n]/g, "")
+					newdata.analysis = dataparse[i + 6]
+					json.questions.push(newdata)
+				}
+			} else if (req.body.type == '简答') {
+				data = data.toString()
+				var dataparse = data.split('@')
+				var json = { questions: [] }
+				for (var i = 0; i < dataparse.length; i = i + 6) {
+					var newdata = {}
+					newdata.uploader = req.body.uploader
+					newdata.tag = req.body.tag
+					newdata.type = req.body.type
+					newdata.question = dataparse[i + 1].replace('\r\n', '')
+					newdata.optionA = 'null'
+					newdata.optionB = 'null'
+					newdata.optionC = 'null'
+					newdata.optionD = 'null'
+					newdata.answer = dataparse[i + 3].replace('\r\n', '')
+					newdata.analysis = dataparse[i + 5].replace('\r\n', '')
+					json.questions.push(newdata)
+				}
 			}
 			pool.getConnection((err, connection) => {
 				for (var j = 0; j < json.questions.length; j++) {
@@ -95,7 +108,7 @@ module.exports = {
 					params.push(json.questions[j].analysis)
 					connection.query($sql.multiUploadInsert, params, (err) => {
 						if (err) {
-							console.log(err)
+							console.log(err);
 						}
 						console.log('uploaded!')
 					})

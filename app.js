@@ -28,12 +28,13 @@ app.use('/public/', express.static(path.join(__dirname, './public/'))) //开放�
 //处理token核验不通过的请求
 // app.use(jwtErrHandler)
 // app.use('/', jwtInterceptor, jwtErrHandler, indexRouter)
+app.use('/', indexRouter)
 app.use('/account', accountRouter)
 app.use('/api', jwtInterceptor, APIRouter)
 app.use('/render', renderRouter)
 app.use('/add-questions', addQuestionsRouter)
 // app.use(router)
 
-app.listen(80, function () {
+app.listen(8000, function () {
 	console.log('Running...')
 })
