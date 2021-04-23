@@ -15,7 +15,6 @@
 		<label for="uploader" class="label">上传者</label>
 		<input type="text" name="uploader" class="input_text" id="uploader" placeholder="请输入上传者" />
 		<label for="topic" class="label">题目</label>
-		<!-- <input type="text" name="question" class="input_text" id="topic" placeholder="请输入题目" /> -->
 		<textarea form="question-upload" name="question" class="text_area" id="topic" placeholder="请输入题目"></textarea>
 		<label for="tag" class="label">试题标签</label>
 		<select name="tag" id="tag">
@@ -55,15 +54,15 @@
 			<label for="D">D:</label>
 			<input type="radio" class="radio" id="D" name="answer" value="D" />
 		</div>
-		<div id="blanks">
-			<label for="answerA" class="label">第一空:</label>
-			<input type="text" name="" class="input_text" id="answerA" placeholder="请输入第一空答案" />
-			<label for="answerB" class="label">第二空:</label>
-			<input type="text" name="" class="input_text" id="answerB" placeholder="请输入第二空答案" />
-			<label for="answerC" class="label">第三空:</label>
-			<input type="text" name="" class="input_text" id="answerC" placeholder="请输入第三空答案" />
-			<label for="answerD" class="label">第四空:</label>
-			<input type="text" name="" class="input_text" id="answerD" placeholder="请输入第四空答案" />
+		<div id="blank_area">
+			<div id="blanks">
+				<label for="" class="label">第1空:</label>
+				<input type="text" name="" class="input_text" id="answer1" placeholder="请输入第1空答案" />
+			</div>
+			<div class="blank_button_area">
+				<a href="javascript:;" class="blank_button" id="blank_add">+</a>
+				<a href="javascript:;" class="blank_button" id="blank_rmv">-</a>
+			</div>
 		</div>
 		<textarea form="question-upload" class="text_area" name="" id="answer_text" placeholder="请输入参考答案"></textarea>
 		<label for="analysis" class="label">题目解析</label>

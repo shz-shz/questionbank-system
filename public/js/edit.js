@@ -9,6 +9,7 @@ var answerarea = document.querySelector('#answer_text')
 var select = document.querySelector('select')
 var options = document.querySelector('#options')
 var topic = document.querySelector('#topic')
+var blank_area = document.querySelector('#blank_area')
 var blanks = document.querySelector('#blanks')
 topic.innerHTML = topic.getAttribute('value')
 
@@ -23,7 +24,7 @@ if (type == '单选') {
 	answerarea.style.display = 'none' //隐藏简答题的答案显示框
 	answerarea.removeAttribute('name') //去除name属性阻止简答题的答案表单提交
 
-	blanks.style.display = 'none' //隐藏填空题答案显示框
+	blank_area.style.display = 'none' //隐藏填空题答案显示框
 
 	originanswer = answerarea.getAttribute('value').substr(0, 1)
 	if (originanswer == 'A') answers.children[1].setAttribute('checked', 'checked')
@@ -43,7 +44,7 @@ if (type == '单选') {
 	answers.children[5].removeAttribute('name')
 	answers.children[7].removeAttribute('name')
 
-	blanks.style.display = 'none' //隐藏填空题答案显示框
+	blank_area.style.display = 'none' //隐藏填空题答案显示框
 
 	answerarea.innerHTML = answerarea.getAttribute('value')
 	answerarea.setAttribute('name', 'answer') //为简答题答案提交表单加上name属性来提交更新后的答案
@@ -60,17 +61,24 @@ if (type == '单选') {
 	answers.children[5].removeAttribute('name')
 	answers.children[7].removeAttribute('name')
 
-	blanks.style.display = 'block'
-	blanks.children[1].setAttribute('name', 'answerA')
-	blanks.children[3].setAttribute('name', 'answerB')
-	blanks.children[5].setAttribute('name', 'answerC')
-	blanks.children[7].setAttribute('name', 'answerD')
+	blank_area.style.display = 'block'
+	var blank_area_param = blanks.getAttribute('param').split('/!')
+	var blank_number = blank_area_param.length
 
-	var blanks_param = blanks.children[1].getAttribute('param').split(' ')
-	blanks.children[1].setAttribute('value', blanks_param[0])
-	blanks.children[3].setAttribute('value', blanks_param[1])
-	blanks.children[5].setAttribute('value', blanks_param[2])
-	blanks.children[7].setAttribute('value', blanks_param[3])
+	for (var i = 0; i < blank_area_param.length; i++) { //根据获取的答案长度自动生成对应数量的节点
+		var newnode_label = document.createElement('label')
+		newnode_label.setAttribute('class', 'label')
+		newnode_label.innerHTML = '第' + (i + 1) + '空:'
+		var newnode_input = document.createElement('input')
+		newnode_input.setAttribute('type', 'text')
+		newnode_input.setAttribute('name', 'answer' + (i + 1))
+		newnode_input.setAttribute('class', 'input_text')
+		newnode_input.setAttribute('id', 'answer' + (i + 1))
+		newnode_input.setAttribute('placeholder', '请输入第' + (i + 1) + '空答案')
+		newnode_input.setAttribute('value', blank_area_param[i])
+		blanks.appendChild(newnode_label)
+		blanks.appendChild(newnode_input)
+	}
 
 	answerarea.style.display = 'none' //隐藏简答题的答案显示框
 	answerarea.removeAttribute('name') //去除name属性阻止简答题的答案表单提交
@@ -79,3 +87,34 @@ if (type == '单选') {
 var analysisarea = document.querySelector('#analysis') //将获取到的题目分析填入分析表单中
 
 analysisarea.innerHTML = analysisarea.getAttribute('value')
+
+
+var blank_add_button = document.querySelector('#blank_add')
+var blank_rmv_button = document.querySelector('#blank_rmv')
+
+blank_add_button.addEventListener('click', function () { //+按钮
+	blank_number = blank_number + 1
+	var newnode_label = document.createElement('label')
+	newnode_label.setAttribute('class', 'label')
+	newnode_label.innerHTML = '第' + blank_number + '空:'
+	var newnode_input = document.createElement('input')
+	newnode_input.setAttribute('type', 'text')
+	newnode_input.setAttribute('name', 'answer' + blank_number)
+	newnode_input.setAttribute('class', 'input_text')
+	newnode_input.setAttribute('id', 'answer' + blank_number)
+	newnode_input.setAttribute('placeholder', '请输入第' + blank_number + '空答案')
+	blanks.appendChild(newnode_label)
+	blanks.appendChild(newnode_input)
+})
+
+blank_rmv_button.addEventListener('click', function () { //-按钮
+	if (blank_number == 1)
+		return
+	else {
+		var removed_node = blanks.children[blanks.children.length - 1]
+		blanks.removeChild(removed_node)
+		var removed_node = blanks.children[blanks.children.length - 1]
+		blanks.removeChild(removed_node)
+		blank_number = blank_number - 1
+	}
+})

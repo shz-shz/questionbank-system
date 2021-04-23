@@ -35,6 +35,6 @@ app.use('/render', renderRouter)
 app.use('/add-questions', addQuestionsRouter)
 // app.use(router)
 
-app.listen(8000, function () {
+app.listen(80, function () {
 	console.log('Running...')
 })

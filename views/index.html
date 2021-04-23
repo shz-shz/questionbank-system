@@ -64,12 +64,16 @@
 			<div class="question-answer">
 				<div class="answer">
 					{{if $value.type=='单选'}}
-					<span>正确答案:</span>
+					<span tag="1">正确答案:</span>
+					{{$value.answer}}
 					{{/if}}
 					{{if $value.type=='简答'}}
-					<span>参考答案:</span>
-					{{/if}}
+					<span tag="2">参考答案:</span>
 					{{$value.answer}}
+					{{/if}}
+					{{if $value.type=='填空'}}
+					<span tag="3" answer="{{$value.answer}}">正确答案:</span>
+					{{/if}}
 				</div>
 				<div class="analysis">
 					<span>答案解析:</span>

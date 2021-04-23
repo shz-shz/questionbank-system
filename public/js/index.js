@@ -43,3 +43,11 @@ filters.children[3].addEventListener('click', function () {
 	}
 	this.setAttribute('class', 'filter_checked')
 })
+
+var answer_area = document.querySelectorAll('.answer')
+for (var i = 0; i < answer_area.length; i++) {
+	if (answer_area[i].children[0].getAttribute('tag') == 3) {//优化填空题答案显示方式，避免出现分隔符
+		answer_area[i].innerHTML = answer_area[i].children[0].getAttribute('answer').replace(new RegExp('/!', 'g'), ' ')
+	}
+}
+

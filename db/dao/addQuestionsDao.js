@@ -5,9 +5,18 @@ const fs = require('fs')
 const pool = mysql.createPool($single)
 
 module.exports = {
-	addQuestions: (req, res) => {
-		if (req.body.type == '填空')
-			req.body.answer = req.body.answerA + ' ' + req.body.answerB + ' ' + req.body.answerC + ' ' + req.body.answerD
+	addQuestions: (req, res) => { //将所有答案字符串拼接成一条，中间用/!分隔
+		if (req.body.type == '填空') {
+			var arr = Object.keys(req.body);
+			var answer_length = arr.length - 9
+			req.body.answer = ''
+			for (var i = 1; i <= answer_length; i++) {
+				if (i < answer_length)
+					req.body.answer = req.body.answer + req.body['answer' + i] + '/!'
+				else if (i == answer_length)
+					req.body.answer = req.body.answer + req.body['answer' + i]
+			}
+		}
 		pool.getConnection((err, connection) => {
 			const params = [req.body.uploader, req.body.type, req.body.question, req.body.tag, req.body.optionA, req.body.optionB, req.body.optionC, req.body.optionD, req.body.answer, req.body.analysis]
 			connection.query($sql.manualUploadInsert, params, (err) => {
@@ -39,8 +48,17 @@ module.exports = {
 		}).catch(() => { })
 	},
 	editQuestion: (req, res) => {
-		if (req.body.type == '填空')
-			req.body.answer = req.body.answerA + ' ' + req.body.answerB + ' ' + req.body.answerC + ' ' + req.body.answerD
+		if (req.body.type == '填空') { //将所有答案字符串拼接成一条，中间用/!分隔
+			var arr = Object.keys(req.body);
+			var answer_length = arr.length - 10
+			req.body.answer = ''
+			for (var i = 1; i <= answer_length; i++) {
+				if (i < answer_length)
+					req.body.answer = req.body.answer + req.body['answer' + i] + '/!'
+				else if (i == answer_length)
+					req.body.answer = req.body.answer + req.body['answer' + i]
+			}
+		}
 		pool.getConnection((err, connection) => {
 			const params = [req.body.uploader, req.body.type, req.body.question, req.body.tag, req.body.optionA, req.body.optionB, req.body.optionC, req.body.optionD, req.body.answer, req.body.analysis, req.body.id]
 			connection.query($sql.editUpdate, params, (err) => {
