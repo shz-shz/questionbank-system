@@ -1,9 +1,8 @@
 const mysql_single = {
-	host: '101.37.116.37',
+	host: 'localhost',
 	user: 'root',
 	password: '20010113shz',
-	database: 'questionbank',
-	port: 3306
+	database: 'questionbank'
 }
 
 module.exports = mysql_single
