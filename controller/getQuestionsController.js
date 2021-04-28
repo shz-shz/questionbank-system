@@ -39,3 +39,13 @@ exports.get5RandomShortAnswerQuestions = (req, res) => {
 			res.send(result)
 		})
 }
+
+//接口：随机获取5道填空题
+exports.get5RandomFillBlankQuestions = (req, res) => {
+	getQuestionsDao
+		.get5RandomFillBlankQuestions()
+		.then((result) => result)
+		.then((result) => {
+			res.send(result)
+		})
+}

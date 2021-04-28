@@ -47,7 +47,7 @@ type.children[3].addEventListener('click', function () { //选择填空题按钮
 	answers.children[7].removeAttribute('name')
 
 	for (var i = 0, j = 1; i < blanks.children.length; i = i + 2, j++) {
-		blanks.children[i + 1].setAttribute('name', 'answer' + j) //去除填空题的name属性防止提交
+		blanks.children[i + 1].setAttribute('name', 'answer' + j) //设置填空题的name属性来提交填空题答案
 	}
 
 	answer_text.removeAttribute('name') //去除简答题的表单中的name属性阻止提交

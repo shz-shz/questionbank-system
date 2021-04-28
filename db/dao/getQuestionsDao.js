@@ -87,4 +87,27 @@ module.exports = {
 			})
 		}).catch(() => { })
 	},
+	get5RandomFillBlankQuestions: (req, res) => {
+		return new Promise((resolve, reject) => {
+			pool.getConnection((err, connection) => {
+				if (err) {
+					reject(new Error('mistake in get5RandomShortAnswerQuestions'))
+				}
+				const promise = new Promise((resolve, reject) => {
+					connection.query($sql.get5RandomFillBlankQuestionsSelect, (err, queryResult) => {
+						if (err) {
+							reject(new Error('mistake in get5RandomShortAnswerQuestions query'))
+						}
+						const result = JSON.parse(JSON.stringify(queryResult))
+						for (var i = 0; i < result.length; i++) {
+							result[i].answer = result[i].answer.split('/!')
+						}
+						connection.release()
+						resolve(result)
+					})
+				}).catch(() => { })
+				resolve(promise)
+			})
+		}).catch(() => { })
+	},
 }
