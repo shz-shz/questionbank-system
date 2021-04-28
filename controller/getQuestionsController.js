@@ -21,9 +21,9 @@ exports.get10RandomQuestions = (req, res) => {
 }
 
 //接口：随机获取10道选择题
-exports.get10RandomMultipleChoiceQuestions = (req, res) => {
+exports.get10RandomSingleChoiceQuestions = (req, res) => {
 	getQuestionsDao
-		.get10RandomMultipleChoiceQuestions()
+		.get10RandomSingleChoiceQuestions()
 		.then((result) => result)
 		.then((result) => {
 			res.send(result)

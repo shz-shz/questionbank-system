@@ -47,7 +47,7 @@ module.exports = {
 			})
 		}).catch(() => { })
 	},
-	get10RandomMultipleChoiceQuestions: (req, res) => {
+	get10RandomSingleChoiceQuestions: (req, res) => {
 		return new Promise((resolve, reject) => {
 			pool.getConnection((err, connection) => {
 				if (err) {

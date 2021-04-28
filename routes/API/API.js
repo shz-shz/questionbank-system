@@ -6,7 +6,7 @@ const loginController = require('../../controller/loginController')
 //获取题目
 router.get('/get-all-questions', getQuestionsController.getAllQuestions)
 router.get('/get-10-random-questions', getQuestionsController.get10RandomQuestions)
-router.get('/get-10-random-single-choice-questions', getQuestionsController.get10RandomMultipleChoiceQuestions)
+router.get('/get-10-random-single-choice-questions', getQuestionsController.get10RandomSingleChoiceQuestions)
 router.get('/get-5-random-short-answer-questions', getQuestionsController.get5RandomShortAnswerQuestions)
 
 module.exports = router
