@@ -134,6 +134,10 @@ module.exports = {
 				connection.release()
 			})
 		})
+		fs.unlink(req.files.myfile.path, function (err) {
+			if (err)
+				console.log(err)
+		})
 	},
 	deleteQuestion: (req, res) => {
 		pool.getConnection((err, connection) => {

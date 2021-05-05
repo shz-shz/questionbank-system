@@ -3,5 +3,6 @@ const router = express.Router()
 const indexController = require('../controller/indexController')
 
 router.get('/', indexController.getIndex)
+//router.get('/apidoc', indexController.getApiDoc)
 
 module.exports = router
