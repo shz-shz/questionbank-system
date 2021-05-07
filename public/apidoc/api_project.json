@@ -1,6 +1,6 @@
 {
   "title": "Custom apiDoc browser title",
-  "url": "http://101.37.116.37:8000/api",
+  "url": "http://101.37.116.37:8000",
   "name": "example",
   "version": "0.1.0",
   "description": "apiDoc basic example",
@@ -9,7 +9,7 @@
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2021-05-05T03:18:35.063Z",
+    "time": "2021-05-07T11:21:20.366Z",
     "url": "https://apidocjs.com",
     "version": "0.27.1"
   }

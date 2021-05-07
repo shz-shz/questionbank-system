@@ -1,5 +1,5 @@
 /**
- * @api {Get} /get-all-questions getAllQuestions
+ * @api {Get} /api/get-all-questions getAllQuestions
  * @apiGroup Questions
  * @apiName getAllaQuestions
  *
@@ -21,7 +21,7 @@
  */
 
 /**
-* @api {Get} /get-10-random-questions get10RandomQuestions
+* @api {Get} /api/get-10-random-questions get10RandomQuestions
 * @apiGroup Questions
 * @apiName get10RandomQuestions
 *
@@ -43,7 +43,7 @@
 */
 
 /**
-* @api {Get} /get-10-random-single-choice-questions get10RandomSingleChoiceQuestions
+* @api {Get} /api/get-10-random-single-choice-questions get10RandomSingleChoiceQuestions
 * @apiGroup Questions
 * @apiName get10RandomSingleChoiceQuestions
 *
@@ -65,7 +65,7 @@
 */
 
 /**
-* @api {Get} /get-5-random-short-answer-questions get5RandomShortAnswerQuestions
+* @api {Get} /api/get-5-random-short-answer-questions get5RandomShortAnswerQuestions
 * @apiGroup Questions
 * @apiName get5RandomShortAnswerQuestions
 *
@@ -96,7 +96,7 @@
 */
 
 /**
-* @api {Get} /get-5-random-fill-blank-questions get5RandomFillBlankQuestions
+* @api {Get} /api/get-5-random-fill-blank-questions get5RandomFillBlankQuestions
 * @apiGroup Questions
 * @apiName get5RandomFillBlankQuestions
 *

@@ -18,7 +18,35 @@ module.exports = {
 						if (err) {
 							reject(new Error('mistake in getAllQuestions query'))
 						}
-						const result = JSON.parse(JSON.stringify(queryResult))
+
+						var result = JSON.parse(JSON.stringify(queryResult))
+
+						for (var i = 0; i < result.length; i++) {
+							var options = []
+							var optionA = {}
+							optionA.id = 'A'
+							optionA.value = result[i].optionA
+							var optionB = {}
+							optionB.id = 'B'
+							optionB.value = result[i].optionB
+							var optionC = {}
+							optionC.id = 'C'
+							optionC.value = result[i].optionC
+							var optionD = {}
+							optionD.id = 'D'
+							optionD.value = result[i].optionD
+							options.push(optionA)
+							options.push(optionB)
+							options.push(optionC)
+							options.push(optionD)
+							result[i].options = options
+
+							delete result[i].optionA
+							delete result[i].optionB
+							delete result[i].optionC
+							delete result[i].optionD
+						}
+
 						connection.release()
 						resolve(result)
 					})
@@ -38,7 +66,34 @@ module.exports = {
 						if (err) {
 							reject(new Error('mistake in get10RandomQuestions query'))
 						}
-						const result = JSON.parse(JSON.stringify(queryResult))
+						var result = JSON.parse(JSON.stringify(queryResult))
+
+						for (var i = 0; i < result.length; i++) {
+							var options = []
+							var optionA = {}
+							optionA.id = 'A'
+							optionA.value = result[i].optionA
+							var optionB = {}
+							optionB.id = 'B'
+							optionB.value = result[i].optionB
+							var optionC = {}
+							optionC.id = 'C'
+							optionC.value = result[i].optionC
+							var optionD = {}
+							optionD.id = 'D'
+							optionD.value = result[i].optionD
+							options.push(optionA)
+							options.push(optionB)
+							options.push(optionC)
+							options.push(optionD)
+							result[i].options = options
+
+							delete result[i].optionA
+							delete result[i].optionB
+							delete result[i].optionC
+							delete result[i].optionD
+						}
+
 						connection.release()
 						resolve(result)
 					})
@@ -58,7 +113,35 @@ module.exports = {
 						if (err) {
 							reject(new Error('mistake in get10RandomMultipleChoiceQuestions query'))
 						}
-						const result = JSON.parse(JSON.stringify(queryResult))
+
+						var result = JSON.parse(JSON.stringify(queryResult))
+
+						for (var i = 0; i < result.length; i++) {
+							var options = []
+							var optionA = {}
+							optionA.id = 'A'
+							optionA.value = result[i].optionA
+							var optionB = {}
+							optionB.id = 'B'
+							optionB.value = result[i].optionB
+							var optionC = {}
+							optionC.id = 'C'
+							optionC.value = result[i].optionC
+							var optionD = {}
+							optionD.id = 'D'
+							optionD.value = result[i].optionD
+							options.push(optionA)
+							options.push(optionB)
+							options.push(optionC)
+							options.push(optionD)
+							result[i].options = options
+
+							delete result[i].optionA
+							delete result[i].optionB
+							delete result[i].optionC
+							delete result[i].optionD
+						}
+
 						connection.release()
 						resolve(result)
 					})
@@ -78,7 +161,34 @@ module.exports = {
 						if (err) {
 							reject(new Error('mistake in get5RandomShortAnswerQuestions query'))
 						}
-						const result = JSON.parse(JSON.stringify(queryResult))
+						var result = JSON.parse(JSON.stringify(queryResult))
+
+						for (var i = 0; i < result.length; i++) {
+							var options = []
+							var optionA = {}
+							optionA.id = 'A'
+							optionA.value = result[i].optionA
+							var optionB = {}
+							optionB.id = 'B'
+							optionB.value = result[i].optionB
+							var optionC = {}
+							optionC.id = 'C'
+							optionC.value = result[i].optionC
+							var optionD = {}
+							optionD.id = 'D'
+							optionD.value = result[i].optionD
+							options.push(optionA)
+							options.push(optionB)
+							options.push(optionC)
+							options.push(optionD)
+							result[i].options = options
+
+							delete result[i].optionA
+							delete result[i].optionB
+							delete result[i].optionC
+							delete result[i].optionD
+						}
+
 						connection.release()
 						resolve(result)
 					})
@@ -98,7 +208,36 @@ module.exports = {
 						if (err) {
 							reject(new Error('mistake in get5RandomShortAnswerQuestions query'))
 						}
-						const result = JSON.parse(JSON.stringify(queryResult))
+
+						var result = JSON.parse(JSON.stringify(queryResult))
+
+						for (var i = 0; i < result.length; i++) {
+							var options = []
+							var optionA = {}
+							optionA.id = 'A'
+							optionA.value = result[i].optionA
+							var optionB = {}
+							optionB.id = 'B'
+							optionB.value = result[i].optionB
+							var optionC = {}
+							optionC.id = 'C'
+							optionC.value = result[i].optionC
+							var optionD = {}
+							optionD.id = 'D'
+							optionD.value = result[i].optionD
+							options.push(optionA)
+							options.push(optionB)
+							options.push(optionC)
+							options.push(optionD)
+							result[i].options = options
+
+							delete result[i].optionA
+							delete result[i].optionB
+							delete result[i].optionC
+							delete result[i].optionD
+						}
+
+
 						for (var i = 0; i < result.length; i++) {
 							result[i].answer = result[i].answer.split('/!')
 						}

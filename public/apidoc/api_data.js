@@ -1,7 +1,7 @@
 define({ "api": [
   {
     "type": "Get",
-    "url": "/get-10-random-questions",
+    "url": "/api/get-10-random-questions",
     "title": "get10RandomQuestions",
     "group": "Questions",
     "name": "get10RandomQuestions",
@@ -20,7 +20,7 @@ define({ "api": [
   },
   {
     "type": "Get",
-    "url": "/get-10-random-single-choice-questions",
+    "url": "/api/get-10-random-single-choice-questions",
     "title": "get10RandomSingleChoiceQuestions",
     "group": "Questions",
     "name": "get10RandomSingleChoiceQuestions",
@@ -39,7 +39,7 @@ define({ "api": [
   },
   {
     "type": "Get",
-    "url": "/get-5-random-fill-blank-questions",
+    "url": "/api/get-5-random-fill-blank-questions",
     "title": "get5RandomFillBlankQuestions",
     "group": "Questions",
     "name": "get5RandomFillBlankQuestions",
@@ -58,7 +58,7 @@ define({ "api": [
   },
   {
     "type": "Get",
-    "url": "/get-5-random-short-answer-questions",
+    "url": "/api/get-5-random-short-answer-questions",
     "title": "get5RandomShortAnswerQuestions",
     "group": "Questions",
     "name": "get5RandomShortAnswerQuestions",
@@ -77,7 +77,7 @@ define({ "api": [
   },
   {
     "type": "Get",
-    "url": "/get-all-questions",
+    "url": "/api/get-all-questions",
     "title": "getAllQuestions",
     "group": "Questions",
     "name": "getAllaQuestions",

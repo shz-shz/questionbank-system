@@ -3,5 +3,5 @@
     "version": "0.1.0",
     "description": "apiDoc basic example",
     "title": "Custom apiDoc browser title",
-    "url": "http://101.37.116.37:8000/api"
+    "url": "http://101.37.116.37:8000"
 }
