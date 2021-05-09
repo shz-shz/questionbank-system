@@ -4,6 +4,8 @@ var answers = document.querySelector('.answers')
 var blank_area = document.querySelector('#blank_area')
 var answer_text = document.querySelector('#answer_text')
 var blanks = document.querySelector('#blanks')
+var topic_label = document.getElementById('topic_label')
+var answer_label = document.getElementById('answer_label')
 
 answer_text.style.display = 'none' //默认不显示简答题答案输入框
 blank_area.style.display = 'none' //默认不显示填空题答案输入框
@@ -29,6 +31,9 @@ type.children[1].addEventListener('click', function () {
 	}
 
 	answer_text.removeAttribute('name') //去除简答题的表单中的name属性阻止提交
+
+	topic_label.innerHTML = '题目'
+	answer_label.innerHTML = '请输入答案'
 })
 type.children[3].addEventListener('click', function () { //选择填空题按钮
 	answers.style.display = 'none' //隐藏单选题答案输入
@@ -51,6 +56,10 @@ type.children[3].addEventListener('click', function () { //选择填空题按钮
 	}
 
 	answer_text.removeAttribute('name') //去除简答题的表单中的name属性阻止提交
+
+	topic_label.innerHTML = '题目(一个空用三个短下划线表示)'
+
+	answer_label.innerHTML = '请输入答案(同一个空的所有可能选项用‘%%’隔开)'
 })
 type.children[5].addEventListener('click', function () {
 	//选择简答按钮
@@ -73,11 +82,16 @@ type.children[5].addEventListener('click', function () {
 	}
 
 	answer_text.setAttribute('name', 'answer') //将简答题的答案提交表单加上属性name来提交答案
+
+	topic_label.innerHTML = '题目'
+	answer_label.innerHTML = '请输入答案'
 })
 
 var blank_add_button = document.querySelector('#blank_add')
 var blank_rmv_button = document.querySelector('#blank_rmv')
-var blank_number = 1
+var blank_number = 0
+
+var topic = document.getElementById('topic')
 
 blank_add_button.addEventListener('click', function () { //+按钮
 	blank_number = blank_number + 1
@@ -92,10 +106,14 @@ blank_add_button.addEventListener('click', function () { //+按钮
 	newnode_input.setAttribute('placeholder', '请输入第' + blank_number + '空答案')
 	blanks.appendChild(newnode_label)
 	blanks.appendChild(newnode_input)
+
+	topic.value = topic.value + '___'
 })
 
 blank_rmv_button.addEventListener('click', function () {//-按钮
 	if (blank_number == 1)
+		return
+	else if (blank_number == 0)
 		return
 	else {
 		var removed_node = blanks.children[blanks.children.length - 1]

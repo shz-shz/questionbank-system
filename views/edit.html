@@ -17,7 +17,7 @@
 		<label for="uploader" class="label">上传者:</label>
 		<input type="text" name="uploader" class="input_text" id="uploader" placeholder="请输入上传者"
 			value="{{question.uploader}}" />
-		<label for="topic" class="label">题目:</label>
+		<label for="topic" class="label" id="topic_label">题目:</label>
 		<!-- <input type="text" name="question" class="input_text" id="topic" placeholder="请输入题目"
 			value="{{question.question}}" /> -->
 		<textarea form="question-upload" name="question" class="text_area" id="topic" placeholder="请输入题目"
@@ -44,7 +44,7 @@
 			<input type="text" name="optionD" class="input_text" id="optionD" placeholder="请输入D选项内容"
 				value="{{question.optionD}}" />
 		</div>
-		<label for="" class="label">请输入答案:</label>
+		<label for="" class="label" id="answer_label">请输入答案:</label>
 		<div class="answers">
 			<label for="A">A:</label>
 			<input type="radio" class="radio" id="A" name="answer" value="A" />

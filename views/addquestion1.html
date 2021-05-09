@@ -14,7 +14,7 @@
 	<form action="/add-questions/manually" method="POST" id="question-upload">
 		<label for="uploader" class="label">上传者</label>
 		<input type="text" name="uploader" class="input_text" id="uploader" placeholder="请输入上传者" />
-		<label for="topic" class="label">题目</label>
+		<label for="topic" class="label" id="topic_label">题目</label>
 		<textarea form="question-upload" name="question" class="text_area" id="topic" placeholder="请输入题目"></textarea>
 		<label for="tag" class="label">试题标签</label>
 		<select name="tag" id="tag">
@@ -43,7 +43,7 @@
 			<label for="optionD" class="label">D:</label>
 			<input type="text" name="optionD" class="input_text" id="optionD" placeholder="请输入D选项内容" />
 		</div>
-		<label for="" class="label">请输入答案</label>
+		<label for="" class="label" id="answer_label">请输入答案</label>
 		<div class="answers">
 			<label for="A">A:</label>
 			<input type="radio" class="radio" id="A" name="answer" value="A" />
@@ -56,8 +56,8 @@
 		</div>
 		<div id="blank_area">
 			<div id="blanks">
-				<label for="" class="label">第1空:</label>
-				<input type="text" name="" class="input_text" id="answer1" placeholder="请输入第1空答案" />
+				<!-- <label for="" class="label">第1空:</label>
+				<input type="text" name="" class="input_text" id="answer1" placeholder="请输入第1空答案" /> -->
 			</div>
 			<div class="blank_button_area">
 				<a href="javascript:;" class="blank_button" id="blank_add">+</a>

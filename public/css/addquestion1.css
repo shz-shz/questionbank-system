@@ -52,6 +52,20 @@ form {
     outline: none;
 }
 
+.input_blank_text {
+    float:left;
+    display: block;
+    width: 94%;
+    height: 25px;
+    margin: 0 auto;
+    margin-left: 5px;
+    padding: 0 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
 select {
     display: block;
     height: 25px;
@@ -98,6 +112,20 @@ select {
     text-decoration: none;
     line-height: 25px;
     text-align: center;
+    border-radius: 5px;
+}
+
+.blank_add_button {
+    float: left;
+    display: block;
+    margin-right:10px;
+    height: 25px;
+    width: 25px;
+    color: black;
+    text-decoration: none;
+    line-height: 25px;
+    text-align: center;
+    border:2px solid black;
     border-radius: 5px;
 }
 

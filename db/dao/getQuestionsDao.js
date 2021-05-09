@@ -212,24 +212,28 @@ module.exports = {
 						var result = JSON.parse(JSON.stringify(queryResult))
 
 						for (var i = 0; i < result.length; i++) {
-							var options = []
-							var optionA = {}
-							optionA.id = 'A'
-							optionA.value = result[i].optionA
-							var optionB = {}
-							optionB.id = 'B'
-							optionB.value = result[i].optionB
-							var optionC = {}
-							optionC.id = 'C'
-							optionC.value = result[i].optionC
-							var optionD = {}
-							optionD.id = 'D'
-							optionD.value = result[i].optionD
-							options.push(optionA)
-							options.push(optionB)
-							options.push(optionC)
-							options.push(optionD)
-							result[i].options = options
+							// var options = []
+							// var optionA = {}
+							// optionA.id = 'A'
+							// optionA.value = result[i].optionA
+							// var optionB = {}
+							// optionB.id = 'B'
+							// optionB.value = result[i].optionB
+							// var optionC = {}
+							// optionC.id = 'C'
+							// optionC.value = result[i].optionC
+							// var optionD = {}
+							// optionD.id = 'D'
+							// optionD.value = result[i].optionD
+							// options.push(optionA)
+							// options.push(optionB)
+							// options.push(optionC)
+							// options.push(optionD)
+							// result[i].options = options
+							delete result[i].uploader
+							delete result[i].type
+							delete result[i].tag
+							delete result[i].analysis
 
 							delete result[i].optionA
 							delete result[i].optionB
@@ -240,7 +244,12 @@ module.exports = {
 
 						for (var i = 0; i < result.length; i++) {
 							result[i].answer = result[i].answer.split('/!')
+							for (var j = 0; j < result[i].answer.length; j++) {
+								result[i].answer[j] = result[i].answer[j].split('%%')
+							}
 						}
+
+
 						connection.release()
 						resolve(result)
 					})

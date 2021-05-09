@@ -13,6 +13,9 @@ var blank_area = document.querySelector('#blank_area')
 var blanks = document.querySelector('#blanks')
 topic.innerHTML = topic.getAttribute('value')
 
+var topic_label = document.getElementById('topic_label')
+var answer_label = document.getElementById('answer_label')
+
 var selected = url.split('&')[1] //根据获取到的题的tag自动选中标签
 selected = selected.split('=')[1]
 if (selected == 0) select.children[0].setAttribute('selected', 'selected')
@@ -82,12 +85,17 @@ if (type == '单选') {
 
 	answerarea.style.display = 'none' //隐藏简答题的答案显示框
 	answerarea.removeAttribute('name') //去除name属性阻止简答题的答案表单提交
+
+	topic_label.innerHTML = '题目(一个空用三个短下划线表示)'
+	answer_label.innerHTML = '请输入答案(同一个空的所有可能选项用‘%%’隔开)'
 }
 
 var analysisarea = document.querySelector('#analysis') //将获取到的题目分析填入分析表单中
 
 analysisarea.innerHTML = analysisarea.getAttribute('value')
 
+
+var topic = document.getElementById('topic')
 
 var blank_add_button = document.querySelector('#blank_add')
 var blank_rmv_button = document.querySelector('#blank_rmv')
@@ -105,10 +113,14 @@ blank_add_button.addEventListener('click', function () { //+按钮
 	newnode_input.setAttribute('placeholder', '请输入第' + blank_number + '空答案')
 	blanks.appendChild(newnode_label)
 	blanks.appendChild(newnode_input)
+
+	topic.value = topic.value + '___'
 })
 
 blank_rmv_button.addEventListener('click', function () { //-按钮
 	if (blank_number == 1)
+		return
+	else if (blank_number == 0)
 		return
 	else {
 		var removed_node = blanks.children[blanks.children.length - 1]

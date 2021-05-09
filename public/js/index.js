@@ -47,7 +47,12 @@ filters.children[3].addEventListener('click', function () {
 var answer_area = document.querySelectorAll('.answer')
 for (var i = 0; i < answer_area.length; i++) {
 	if (answer_area[i].children[0].getAttribute('tag') == 3) {//优化填空题答案显示方式，避免出现分隔符
-		answer_area[i].innerHTML = answer_area[i].children[0].getAttribute('answer').replace(new RegExp('/!', 'g'), ' ')
+		answer_area[i].innerHTML = '<span tag="3">正确答案:</span>' + answer_area[i].children[0].getAttribute('answer').replace(new RegExp('/!', 'g'), ' ')
 	}
 }
 
+for (var i = 0; i < answer_area.length; i++) {
+	if (answer_area[i].children[0].getAttribute('tag') == 3) {//优化填空题答案显示方式，避免出现分隔符
+		answer_area[i].innerHTML = '<span tag="3">正确答案:</span>' + answer_area[i].innerHTML.replace(new RegExp('%%', 'g'), '/')
+	}
+}
