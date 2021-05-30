@@ -78,7 +78,7 @@ module.exports = {
 				data = data.toString()
 				var dataparse = data.split('\n')
 				var json = { questions: [] }
-				for (var i = 0; i < dataparse.length; i = i + 7) {
+				for (var i = 0; i < dataparse.length; i = i + 8) {
 					var newdata = {}
 					newdata.uploader = req.body.uploader
 					newdata.tag = req.body.tag

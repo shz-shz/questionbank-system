@@ -47,7 +47,7 @@
       "examples": [
         {
           "title": "Response-Example",
-          "content": "{ \n  \"id\":114,\n  \"uploader\":\"shzshz\",\n  \"type\":\"填空\",\n  \"question\":\"8789_122___4165365\",\n  \"tag\":3,\n  \"optionA\":\"null\",\n  \"optionB\":\"null\",\n  \"optionC\":\"null\",\n  \"optionD\":\"null\",\n  \"answer\":[\"111\",\"222\",\"333\",\"444\",\"555\",\"159\"],\n  \"analysis\":\"753753\"}",
+          "content": "{ \n  \"id\":114,\n  \"uploader\":\"shzshz\",\n  \"type\":\"填空\",\n  \"question\":\"8789___122___4165365\",\n  \"tag\":3,\n  \"optionA\":\"null\",\n  \"optionB\":\"null\",\n  \"optionC\":\"null\",\n  \"optionD\":\"null\",\n  \"answer\":[['111','222'],['333']],\n  \"analysis\":\"753753\"\n}",
           "type": "json"
         }
       ]

@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.top {
+    width: 70%;
+    height: 40px;
+    margin: 0px auto;
+    margin-top: 100px;
+    border-bottom: 2px solid black;
+    font-size: 25px;
+    line-height: 40px;
+}
+
+form {
+    margin: 40px auto;
+    width: 70%;
+}
+
+.label {
+    display: block;
+    height: 30px;
+    width: 98%;
+    margin: 5px auto;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+.input_text {
+    display: block;
+    width: 97%;
+    height: 25px;
+    margin: 0 auto;
+    padding: 0 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+.input_text_short {
+    float: left;
+    display: block;
+    width: 7%;
+    height: 20px;
+    margin: 0 8px;
+    padding: 0 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+/*select {
+    float: left;
+    display: block;
+    height: 25px;
+    margin-left: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+}*/
+
+ /*清除浮动*/
+#starttime:before,#starttime:after {
+	content:"";
+	display:table;
+}
+#starttime:after {
+	clear:both;
+}
+#starttime {
+	*zoom: 1;
+}
+
+#duration:before,#duration:after {
+	content:"";
+	display:table;
+}
+#duration:after {
+	clear:both;
+}
+#duration {
+	*zoom: 1;
+}
+
+#questions {
+    display: block;
+    width: 97%;
+    height: 500px;
+    border: 1px solid black;
+    overflow-y:scroll
+}
+
+.question-checkbox {
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin-left: 22px;
+    margin-top: 10px;
+    float:left;
+}
+
+.question{
+    display: block;
+	width: 90%;
+	padding: 10px auto;
+	margin: 10px 65px;
+	border-top: 1px solid grey;
+	border-bottom: 1px solid grey;
+}
+
+.question:hover{
+    background-color: rgb(241, 240, 240);
+}
+
+.question-topic {
+	font-size: 18px;
+	height: auto;
+	line-height: 40px;
+}
+
+.question-topic span {
+	color: grey;
+	font-size: 16px;
+	height: 40px;
+	line-height: 40px;
+}
+
+.options {
+	display: block;
+	padding: 0 10px;
+}
+
+.options li {
+	margin: 5px auto;
+    list-style: none;
+}
+
+.answer {
+	margin-top: 10px;
+}
+
+.analysis {
+	margin: 10px auto;
+}
+
+.submit {
+    display: block;
+    margin: 30px auto;
+    width: 100px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-weight: 500;
+}

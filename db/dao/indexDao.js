@@ -19,9 +19,9 @@ module.exports = {
 						connection.release()
 						resolve(queryResult)
 					})
-				}).catch(() => {})
+				}).catch(() => { })
 				resolve(promise)
 			})
-		}).catch(() => {})
+		}).catch(() => { })
 	},
 }

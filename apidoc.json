@@ -1,7 +1,7 @@
 {
-    "name": "example",
+    "name": "前端题库接口文档",
     "version": "0.1.0",
-    "description": "apiDoc basic example",
+    "description": "一个关于前端题库项目的接口文档",
     "title": "Custom apiDoc browser title",
     "url": "http://101.37.116.37:8000"
 }

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加考试</title>
+    <link rel="stylesheet" href="/public/css/addexam.css" />
+</head>
+
+<body>
+    <div class="top">添加考试</div>
+    <form action="/add-exams/manually" method="POST" id="exam-upload">
+        <label for="uploader" class="label">创建者</label>
+        <input type="text" name="creator" class="input_text" id="creator" placeholder="请输入创建者" />
+        <label for="uploader" class="label">考试标题</label>
+        <input type="text" name="topic" class="input_text" id="topic" placeholder="请输入标题" />
+        <label for="starttime" class="label">开始时间</label>
+        <div id="starttime">
+            <input type="text" name="starttime_year" class="input_text_short" placeholder="年">
+            <input type="text" name="starttime_month" class="input_text_short" placeholder="月">
+            <input type="text" name="starttime_date" class="input_text_short" placeholder="日">
+            <input type="text" name="starttime_hour" class="input_text_short" placeholder="时">
+            <input type="text" name="starttime_minute" class="input_text_short" placeholder="分">
+            <input type="text" name="starttime_second" class="input_text_short" placeholder="秒">
+        </div>
+        <label for="duration" class="label">考试时长</label>
+        <div id="duration">
+            <input type="text" name="duration_hour" class="input_text_short" placeholder="时">
+            <input type="text" name="duration_month" class="input_text_short" placeholder="分">
+            <input type="text" name="duration_second" class="input_text_short" placeholder="秒">
+        </div>
+        <label for="uploader" class="label">考试题目</label>
+        <ul id="questions">
+            {{each questions}}
+            <input type="checkbox" name="questions" class="question-checkbox" value="{{$value.id}}">
+            <li class="question" tag="{{$value.tag}}">
+                <div class="question-topic">
+                    {{if $value.tag==0}}
+                    <span></span>
+                    {{/if}} {{if $value.tag==1}}
+                    <span>[HTML]</span>
+                    {{/if}} {{if $value.tag==2}}
+                    <span>[CSS]</span>
+                    {{/if}} {{if $value.tag==3}}
+                    <span>[JavaScript]</span>
+                    {{/if}} {{$value.question}}
+                </div>
+                {{if $value.type=='单选'}}
+                <ul class="options">
+                    <li>
+                        <span>A.</span>
+                        {{$value.optionA}}
+                    </li>
+                    <li>
+                        <span>B.</span>
+                        {{$value.optionB}}
+                    </li>
+                    <li>
+                        <span>C.</span>
+                        {{$value.optionC}}
+                    </li>
+                    <li>
+                        <span>D.</span>
+                        {{$value.optionD}}
+                    </li>
+                </ul>
+                {{/if}}
+                <div class="question-answer">
+                    <div class="answer">
+                        {{if $value.type=='单选'}}
+                        <span tag="1">正确答案:</span>
+                        {{$value.answer}}
+                        {{/if}}
+                        {{if $value.type=='简答'}}
+                        <span tag="2">参考答案:</span>
+                        {{$value.answer}}
+                        {{/if}}
+                        {{if $value.type=='填空'}}
+                        <span tag="3" answer="{{$value.answer}}">正确答案:</span>
+                        {{/if}}
+                    </div>
+                    <div class="analysis">
+                        <span>答案解析:</span>
+                        {{$value.analysis}}
+                    </div>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+        <input type="submit" value="提交" class="submit" />
+    </form>
+</body>
+
+</html>

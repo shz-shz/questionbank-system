@@ -106,20 +106,22 @@
 *   "id":114,
 *   "uploader":"shzshz",
 *   "type":"填空",
-*   "question":"8789_122___4165365",
+*   "question":"8789___122___4165365",
 *   "tag":3,
 *   "optionA":"null",
 *   "optionB":"null",
 *   "optionC":"null",
 *   "optionD":"null",
-*   "answer":["111","222","333","444","555","159"],
-*   "analysis":"753753"}
+*   "answer":[['111','222'],['333']],
+*   "analysis":"753753"
+* }
 */
 
 const express = require('express')
 const router = express.Router()
 const getQuestionsController = require('../../controller/getQuestionsController')
 const loginController = require('../../controller/loginController')
+const getExamsController = require('../../controller/getExamsController')
 
 //获取题目
 router.get('/get-all-questions', getQuestionsController.getAllQuestions)
@@ -127,5 +129,9 @@ router.get('/get-10-random-questions', getQuestionsController.get10RandomQuestio
 router.get('/get-10-random-single-choice-questions', getQuestionsController.get10RandomSingleChoiceQuestions)
 router.get('/get-5-random-short-answer-questions', getQuestionsController.get5RandomShortAnswerQuestions)
 router.get('/get-5-random-fill-blank-questions', getQuestionsController.get5RandomFillBlankQuestions)
+
+//获取考试
+router.get('/get-all-exams', getExamsController.getAllExams)
+router.get('/get-exam-by-Id', getExamsController.getExamById)
 
 module.exports = router

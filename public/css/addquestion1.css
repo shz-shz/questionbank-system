@@ -115,7 +115,7 @@ select {
     border-radius: 5px;
 }
 
-.blank_add_button {
+/* .blank_add_button {
     float: left;
     display: block;
     margin-right:10px;
@@ -127,7 +127,7 @@ select {
     text-align: center;
     border:2px solid black;
     border-radius: 5px;
-}
+} */
 
 .text_area {
     display: block;

@@ -36,6 +36,7 @@ a {
 	display: block;
 	float: right;
 	height: 70px;
+	margin: 0 20px;
 	line-height: 70px;
 	font-size: 18px;
 }
@@ -119,52 +120,6 @@ ul li {
 .filter_checked:hover {
 	color: rgb(235, 235, 235);
 }
-
-.top {
-	width: 80%;
-	height: 50px;
-	margin: 20px auto;
-	margin-top: 100px;
-	border-bottom: 2px solid black;
-}
-
-.top-button {
-	/* display: inline-block; */
-	float: right;
-	height: 40px;
-	width: auto;
-	padding: 0px 10px;
-	margin: 0 5px;
-	/* border: 1px solid black; */
-	line-height: 40px;
-	color: white;
-	background-color: rgb(37, 199, 37);
-	border-radius: 8px;
-}
-
-/* .filter {
-	height: 50px;
-	width: 80%;
-	margin: 0 auto;
-} */
-
-/* .filter a {
-	display: block;
-	float: left;
-	height: 35px;
-	width: auto;
-	padding: 0px 10px;
-	margin: 0 10px;
-	color: black;
-	border: 2px solid black;
-	line-height: 35px;
-	border-radius: 5px;
-}
-
-.filter a:hover {
-	color: rgb(114, 114, 114);
-	border: 2px solid rgb(114, 114, 114);
-} */
 
 .question-list {
 	width: 78%;

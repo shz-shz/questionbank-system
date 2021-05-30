@@ -1,5 +1,4 @@
 const indexDao = require('../db/dao/indexDao')
-const fs = require('fs')
 
 exports.getIndex = (req, res) => {
 	indexDao
@@ -11,12 +10,4 @@ exports.getIndex = (req, res) => {
 			})
 		})
 }
-
-// exports.getApiDoc = (req, res) => {
-// 	fs.readFile('../public/apidoc/index.html', function (err, data) {
-// 		if (err)
-// 			return res.send(err)
-// 		res.send(data)
-// 	})
-// }
 

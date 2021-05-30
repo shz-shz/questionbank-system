@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>考试列表</title>
+    <link rel="stylesheet" href="/public/css/exams.css" />
+</head>
+
+<body>
+    <div class="header">
+        <ul class="nav">
+            <li><a href="/" class="logo">前端题库系统</a></li>
+            <li class="link"><a href="/">去首页</a></li>
+        </ul>
+
+    </div>
+    <div class="top">
+        <a href="/render/addexam" class="top-button">+</a>
+    </div>
+    <!-- <div class="filter">
+        <a href="javascript:;" class="filter_button">全部显示</a>
+        <a href="javascript:;" class="filter_button">HTML</a>
+        <a href="javascript:;" class="filter_button">CSS</a>
+        <a href="javascript:;" class="filter_button">JavaScript</a>
+    </div> -->
+    <ul class="exam-list">
+        {{each exams}}
+        <li class="exam" tag="{{$value.tag}}">
+            <div class="exam-topic">
+                {{$value.topic}}
+            </div>
+            <div class="exam-time">
+                <div class="start-time">
+                    <span>开始时间:</span>
+                    {{$value.starttime}}
+                </div>
+                <div class="duration">
+                    <span>考试时长:</span>
+                    {{$value.duration}}
+                </div>
+            </div>
+            <div class="methods">
+                <div class="creator">创建者:{{$value.creator}}</div>
+                <a href="/render/deleteexam?id={{$value.id}}">删除</a>
+                <a href="/render/editexam?id={{$value.id}}">编辑</a>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+    <script src="/public/js/exam.js"></script>
+</body>
+
+</html>
